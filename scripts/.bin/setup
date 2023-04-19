@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NOCOLOR='\033[0m'
+YELLOW='\033[1;33m'
+
+function log() {
+    level=$1
+    message=$2
+    if [[ $level = 'info' ]]; then
+        echo -e "${GREEN}$message${NOCOLOR}"
+    elif [[ $level = 'warning' ]]; then
+        echo -e "${YELLOW}$message${NOCOLOR}"
+    else
+        echo -e "${RED}$message${NOCOLOR}"
+    fi
+}
+
+log info '|> Installing Packages...'
+zsh $HOME/.bin/scripts/install_homebrew
+zsh $HOME/.bin/scripts/install_packages
+zsh $HOME/.bin/scripts/install_aws
+zsh $HOME/.bin/scripts/install_gcloud
+zsh $HOME/.bin/scripts/install_sdkman
+zsh $HOME/.bin/scripts/install_fonts
+zsh $HOME/.bin/scripts/install_zshzap --branch release-v1
+log info '|> Packages set'
+
+log info '|> Setting Languages'
+sh $HOME/.bin/scripts/setup_java
+sh $HOME/.bin/scripts/setup_gradle
+sh $HOME/.bin/scripts/setup_node
+sh $HOME/.bin/scripts/setup_python
+log info '|> Languages set'
+
+log info '|> Setting configs'
+sh $HOME/.bin/scripts/setup_ssh
+sh $HOME/.bin/scripts/setup_fzf
+sh $HOME/.bin/scripts/setup_macos
+log info '|> Configs set'
+
+sudo chsh -s $(which zsh)
+
+log info 'Reloading shell'
+source $XDG_CONFIG_HOME/zsh/.zshrc
+ 
+log info '|> Updating Applications...'
+brew upgrade
+brew update
+brew upgrade --cask
+mas upgrade
+brew cleanup -s --prune=all
+
+log info '|> Setup completed <|'

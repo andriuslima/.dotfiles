@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+echo ''
+echo 'Stowing Configs'
+
+cd $HOME/.dotfiles
+
+stow conda --no-folding --restow
+stow git --no-folding --restow
+stow java --no-folding --restow
+stow neofetch --no-folding --restow
+stow neovim --no-folding --restow
+stow scripts --no-folding --restow
+stow sdkman --no-folding --restow
+stow ssh --no-folding --restow
+stow zsh --no-folding --restow
+stow fleet --no-folding --restow

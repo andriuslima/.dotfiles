@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+main() {
+
+    local ZAP_DIR="$HOME/.local/share/zap"
+
+    [[ $1 == "--branch" || $1 == "-b" && -n $2 ]] && local BRANCH="$2"
+
+    # check if ZAP_DIR already exists
+    [[ -d "$ZAP_DIR" ]] && {
+        echo "Zap is already installed in '$ZAP_DIR'!"
+        read -q "Reinstall Zap? [y/N] "
+        echo ""
+        [[ $res == "n" ]] && {
+            echo "❕ skipped!"
+            return
+        }
+        echo "Reinstalling Zap..."
+        rm -rf "$ZAP_DIR"
+    }
+
+    git clone -b "${BRANCH:-master}" https://github.com/zap-zsh/zap.git "$ZAP_DIR" > /dev/null 2>&1 || { echo "❌ Failed to install Zap" && return 2 }
+
+    echo " Zapped"
+    echo "Find more plugins at http://zapzsh.org"
+
+    return 0
+}
+
+main $@
+
+[[ $? -eq 0 ]] && exec zsh || return

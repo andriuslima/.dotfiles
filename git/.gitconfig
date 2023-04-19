@@ -1,0 +1,18 @@
+[user]
+	email = andrius.lima@townsq.com.br
+	name = Andrius Lima
+[pull]
+	rebase = true
+[core]
+	autocrlf = input
+  editor = code --wait
+[init]
+	defaultBranch = main
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
