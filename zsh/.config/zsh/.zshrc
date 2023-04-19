@@ -99,3 +99,5 @@ profileUnset() {
 # Keymaps
 zle -N open_project
 bindkey '^p' 'open_project'
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh

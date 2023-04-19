@@ -1,10 +1,6 @@
 #!/usr/bin/env zsh
 
-echo ''
-echo 'Stowing Configs'
-
 cd $HOME/.dotfiles
-
 stow conda --no-folding --restow
 stow git --no-folding --restow
 stow java --no-folding --restow
