@@ -10,20 +10,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 -- Window management
 keymap("n", "<C-h>", "<C-w>h", opts) -- Go to left
 keymap("n", "<C-j>", "<C-w>j", opts) -- Go to bottom
 keymap("n", "<C-k>", "<C-w>k", opts) -- Go to top
 keymap("n", "<C-l>", "<C-w>l", opts) -- Go to rigth
-
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize +2<CR>", opts)
@@ -53,8 +44,10 @@ keymap("n", "<A-/>", "<cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts) -- Save buffer
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-w>", ":Bdelete!<CR>", opts) -- Close buffer
-keymap("n", "<C-e>",
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    opts)
-
+keymap("n", "<C-w>", ":Bdelete!<CR>", opts) -- Close buffer
+keymap(
+	"n",
+	"<C-e>",
+	"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	opts
+)

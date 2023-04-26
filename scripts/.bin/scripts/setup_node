@@ -17,8 +17,6 @@ function log() {
     fi
 }
 
-log info '|||> Setting NodeJs'
-
 log info '|||> Installing NVM'
 
 which -s nvm
@@ -32,5 +30,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 log info 'Installing node'
+nvm cache clear
 nvm install 18.15.0
 nvm alias default 18.15.0

@@ -20,7 +20,7 @@ function log() {
 
 
 if [ ! -d "$HOME/.dotfiles" ]; then
-    log info '$DOT_DIR does not exist. Cloning...'
+    log info 'Dotfiles does not exist. Cloning...'
     git clone git@github.com:andriuslima/.dotfiles.git
 fi
 

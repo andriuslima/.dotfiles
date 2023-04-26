@@ -4,6 +4,7 @@ plug "zap-zsh/zap-prompt"
 plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
 plug "zap-zsh/completions"
+plug "wintermi/zsh-starship"
 #plug "zap-zsh/nvm"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
@@ -20,6 +21,8 @@ alias vim='nvim'
 alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
 alias dkcompose='docker-compose'
 alias zshconfig='$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc'
+alias dotconfig='$EDITOR $HOME/.dotfiles/'
+alias nvimconfig='$EDITOR $HOME/.dotfiles/neovim/.config/nvim/'
 alias codes='cd $HOME/Codes/'
 alias tsq='cd $HOME/Codes/tsq/'
 alias python='python3'
@@ -49,7 +52,9 @@ export PATH=$HOME/.dotnet/tools:$PATH
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 export GOPATH=$HOME/Codes/go
-export EDITOR=code
+export EDITOR=nvim
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
 
 # Functions
 function get_project() {

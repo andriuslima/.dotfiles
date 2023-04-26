@@ -5,8 +5,5 @@ if not github_theme_status_ok then
     return
 end
 
--- vim.opt.colorcolumn = { 120, 180 }
-
-github_theme.setup({
-    theme_style = "dark_default"
-})
+vim.cmd "colorscheme moonfly"
+vim.cmd "set colorcolumn=120"

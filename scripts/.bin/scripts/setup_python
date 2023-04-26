@@ -20,24 +20,17 @@ function log() {
 log info '|||> Setting Python packages'
 
 conda=(
-  pynvim
-  pylint
-  jedi
-  vscode-python
-)
-
-pip=(
-  awscli-local
   boto3
-  jedi
+  awscli-local
   pynvim
   pylint
+  jedi
 )
 
-conda config --add channels conda-forge
+conda config --add channels conda-forg
+conda update -n base -c defaults conda --yes
 
 python3 -m pip install --upgrade setuptools
 python3 -m pip install --upgrade pip
 
 conda install --name base ${conda[@]} --yes
-pip3 install ${pip[@]} --quiet --no-input

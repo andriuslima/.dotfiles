@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 cd $HOME/.dotfiles
-stow aws --no-folding --adopt
 stow conda --no-folding --adopt
 stow git --no-folding --adopt
 stow java --no-folding --adopt
@@ -10,6 +9,6 @@ stow neovim --no-folding --adopt
 stow scripts --no-folding --adopt
 stow sdkman --no-folding --adopt
 stow ssh --no-folding --adopt
-stow tmux --no-folding --adopt
+stow starship --no-folding --adopt
 stow zsh --no-folding --adopt
 stow fleet --no-folding --adopt

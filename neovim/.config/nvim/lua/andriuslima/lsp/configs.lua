@@ -20,7 +20,7 @@ local servers = {
   "jdtls",
   "tsserver",
   "kotlin_language_server",
-  "sumneko_lua",
+  "lua_ls",
   "prismals",
   "pyright",
   "terraformls",

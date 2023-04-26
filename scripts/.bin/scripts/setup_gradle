@@ -22,5 +22,4 @@ log info '|||> Setting Gradle'
 source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 sdk install gradle 6.8
-
 sdk default gradle 6.8

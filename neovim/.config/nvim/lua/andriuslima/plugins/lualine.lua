@@ -76,7 +76,7 @@ lualine.setup({
 
 		lualine_x = { spaces, "encoding", filetype },
 		lualine_y = { location },
-		lualine_z = {},
+		lualine_z = {"fileformat"},
 	},
 
 })

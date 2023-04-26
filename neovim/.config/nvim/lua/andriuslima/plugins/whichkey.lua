@@ -74,7 +74,8 @@ local mappings = {
     r = { "<cmd>Telescope lsp_references<CR>", "References" },
     R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
     d = { "<cmd>Telescope lsp_type_definition<CR>", "Type Definition" },
-    f = { "<cmd>lua vim.lsp.buf.formation()<CR>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
+    S = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
   },
   ["p"] = { "<cmd> Telescope projects<CR>", "Projects" },
   b = {

@@ -39,10 +39,11 @@ packages=(
   ripgrep
   coreutils
   exa
-  defaultbrowser
   stow
   jesseduffield/lazygit/lazygit
-  starship
+  lua
+  lua-language-server
+  stylua
 )
 
 casks=(

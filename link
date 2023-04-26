@@ -11,3 +11,4 @@ stow sdkman --no-folding --restow
 stow ssh --no-folding --restow
 stow zsh --no-folding --restow
 stow fleet --no-folding --restow
+stow starship --no-folding --restow

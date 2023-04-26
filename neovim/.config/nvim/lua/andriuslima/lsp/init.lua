@@ -8,3 +8,4 @@ end
 
 require("andriuslima.lsp.configs")
 require("andriuslima.lsp.handlers").setup()
+require("andriuslima.lsp.null-ls")
