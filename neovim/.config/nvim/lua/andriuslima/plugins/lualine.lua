@@ -62,7 +62,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "github_dark_default",
+		theme = "moonfly",
 
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
