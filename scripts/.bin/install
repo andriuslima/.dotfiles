@@ -52,10 +52,11 @@ log info 'Reloading shell'
 source $XDG_CONFIG_HOME/zsh/.zshrc
  
 log info '|> Updating Applications...'
-brew upgrade
-brew update
-brew upgrade --cask
+brew upgrade --quiet
+brew update --quiet
+brew upgrade --cask --quiet
 mas upgrade
-brew cleanup -s --prune=all
+brew autoremove --quiet
+brew cleanup -s --prune=all --quiet
 
 log info '|> Setup completed <|'
