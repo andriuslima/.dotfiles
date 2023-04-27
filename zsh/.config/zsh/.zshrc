@@ -4,13 +4,13 @@ plug "zap-zsh/zap-prompt"
 plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
 plug "zap-zsh/completions"
-plug "wintermi/zsh-starship"
 #plug "zap-zsh/nvm"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "Aloxaf/fzf-tab"
 plug "wintermi/zsh-brew"
+plug "wintermi/zsh-starship"
 
 
 # Alias
