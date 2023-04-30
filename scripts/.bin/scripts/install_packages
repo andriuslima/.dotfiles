@@ -44,6 +44,9 @@ packages=(
   lua
   lua-language-server
   stylua
+  libevent
+  ncurses
+  tmux
 )
 
 casks=(
