@@ -1,14 +1,18 @@
 #!/usr/bin/env zsh
 
-cd $HOME/.dotfiles
-stow conda --no-folding --restow
-stow git --no-folding --restow
-stow java --no-folding --restow
-stow neofetch --no-folding --restow
-stow neovim --no-folding --restow
-stow scripts --no-folding --restow
-stow sdkman --no-folding --restow
-stow ssh --no-folding --restow
-stow zsh --no-folding --restow
-stow fleet --no-folding --restow
-stow starship --no-folding --restow
+dir=(
+    conda
+    git
+    java
+    neofetch
+    neovim
+    scripts
+    sdkman
+    ssh
+    starship
+    zsh
+    fleet
+    alacritty
+)
+
+stow ${dir[@]} --no-folding --restow

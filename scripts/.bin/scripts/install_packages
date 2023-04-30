@@ -52,6 +52,7 @@ casks=(
   docker
   miniconda
   iterm2
+  alacritty
 )
 
 mas=(
