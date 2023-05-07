@@ -18,6 +18,7 @@ alias la='exa --long --icons --all --sort name --created --modified --group --he
 alias ll='exa --long --icons --all --sort name --header --no-time'
 alias v='nvim'
 alias vim='nvim'
+alias cat='bat'
 alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
 alias dkcompose='docker-compose'
 alias zshconfig='$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc'
