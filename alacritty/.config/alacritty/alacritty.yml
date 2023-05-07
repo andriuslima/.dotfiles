@@ -4,9 +4,12 @@ env:
 shell:
   program: /bin/zsh
 window:
-  # dimensions:
-  #   columns: 390
-  #   lines: 95
+  dimensions:
+    columns: 250
+    lines: 65
+  position:
+    x: 60 
+    y: 100
   padding:
     x: 1
   decorations: buttonless
