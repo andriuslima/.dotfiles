@@ -13,6 +13,7 @@ dir=(
     zsh
     fleet
     alacritty
+    lf
 )
 
 stow ${dir[@]} --no-folding --restow
