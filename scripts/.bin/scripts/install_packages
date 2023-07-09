@@ -63,14 +63,12 @@ casks=(
 
 mas=(
   409183694   # Keynote               (13.0)
-  1487937127  # Craft                 (2.4.5)
   462058435   # Microsoft Excel       (16.72)
   904280696   # Things                (3.17.5)
   803453959   # Slack                 (4.31.155)
   1147396723  # WhatsApp              (2.2310.9)
   409201541   # Pages                 (13.0)
   462054704   # Microsoft Word        (16.72)
-  1518425043  # Boop                  (1.4.0)
   1352778147  # Bitwarden             (2023.3.2)
   409203825   # Numbers               (13.0)
   462062816   # Microsoft PowerPoint  (16.72)

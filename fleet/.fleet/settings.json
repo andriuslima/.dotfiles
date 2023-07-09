@@ -20,7 +20,7 @@
   "terminal.fontSize": 12.0,
   "terminal.lineSpacing": 1.0,
   "editor.guides": [120],
-  "editor.renderWhitespace": "None",
+  "editor.renderWhitespace": "All",
   "editor.showTabs": true,
   "editor.showVisualGuides": true,
   "editor.showScrollbarMarks": true,
@@ -33,11 +33,12 @@
   "syncThemeWithOs": false,
   "terminal.fontFamily": "FiraCode Nerd Font Mono",
   "restoreWorkspacesOnStartup": false,
-  "theme": "dark",
-  "showEmptyStateOnLastClosedWindow": false,
+  "theme": "dark-edited",
+  "showEmptyStateOnLastClosedWindow": true,
   "git.push.confirm": false,
   "editor.formatOnSave": true,
   "files.openFileMode": "singleClick",
   "files.toggleFolderMode": "singleClick",
-  "terminal.enableFocusEditorOnEsc": false
+  "terminal.enableFocusEditorOnEsc": true,
+  "goto_panel.showShortcuts": true
 }
