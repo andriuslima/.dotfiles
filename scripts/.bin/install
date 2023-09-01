@@ -15,40 +15,40 @@ function log() {
     else
         echo -e "${RED}$message${NOCOLOR}"
     fi
+    sleep 1
 }
 
 log info '|> Installing macOS necessary softwares and updates.'
 
-xcode-select --install
 softwareupdate --all --install --force
-sudo softwareupdate --install-rosetta
+softwareupdate --install-rosetta --agree-to-license 
 
 log info '|> Installing Packages...'
 zsh $HOME/.bin/scripts/install_homebrew
 zsh $HOME/.bin/scripts/install_packages
 zsh $HOME/.bin/scripts/install_aws
-zsh $HOME/.bin/scripts/install_gcloud
+# zsh $HOME/.bin/scripts/install_gcloud
 zsh $HOME/.bin/scripts/install_sdkman
 zsh $HOME/.bin/scripts/install_fonts
 zsh $HOME/.bin/scripts/install_zshzap --branch release-v1
 log info '|> Packages set'
 
 log info '|> Setting Languages'
-sh $HOME/.bin/scripts/setup_java
-sh $HOME/.bin/scripts/setup_gradle
-sh $HOME/.bin/scripts/setup_node
-sh $HOME/.bin/scripts/setup_python
+zsh $HOME/.bin/scripts/setup_java
+zsh $HOME/.bin/scripts/setup_gradle
+zsh $HOME/.bin/scripts/setup_node
+zsh $HOME/.bin/scripts/setup_python
 log info '|> Languages set'
 
 log info '|> Setting configs'
-sh $HOME/.bin/scripts/setup_ssh
-sh $HOME/.bin/scripts/setup_fzf
-sh $HOME/.bin/scripts/setup_macos
+zsh $HOME/.bin/scripts/setup_ssh
+zsh $HOME/.bin/scripts/setup_fzf
+zsh $HOME/.bin/scripts/setup_macos
 log info '|> Configs set'
 
 sudo chsh -s $(which zsh)
 
-log info 'Reloading shell'
+log warning 'Reloading shell'
 source $XDG_CONFIG_HOME/zsh/.zshrc
  
 log info '|> Updating Applications...'
@@ -59,4 +59,4 @@ mas upgrade
 brew autoremove --quiet
 brew cleanup -s --prune=all --quiet
 
-log info '|> Setup completed <|'
+log info '|> Setup completed'

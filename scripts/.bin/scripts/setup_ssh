@@ -26,7 +26,7 @@ PRIVATE_KEY="$SSH_PATH/andriuslima"
 PUBLIC_KEY="$PRIVATE_KEY.pub"
 
 if [ -f "$PRIVATE_KEY" ]; then
-    echo "$PRIVATE_KEY key already setup"
+    log warning "$PRIVATE_KEY key already setup"
 else
     ssh-keygen -b 2048 -t rsa -f $PRIVATE_KEY -q -N ""
 fi

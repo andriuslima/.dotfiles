@@ -22,10 +22,10 @@ log info '|||> Setting SDKMAN'
 export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 
 if [ ! -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
-  log info 'sdkman-init.sh not found, installing it'
+  log warning 'sdkman-init.sh not found, installing it'
   curl -s "https://get.sdkman.io?rcupdate=false" | bash
 else
-    log info 'SDKMAN already installed, updating'
+    log warning 'SDKMAN already installed, updating'
     source "$SDKMAN_DIR/bin/sdkman-init.sh"
     sdk update
 fi

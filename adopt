@@ -1,19 +1,20 @@
 #!/usr/bin/env zsh
 
 dir=(
+    alacritty
     conda
+    fleet
     git
     java
+    lf
     neofetch
     neovim
     scripts
     sdkman
     ssh
     starship
+    tmux
     zsh
-    fleet
-    alacritty
-    lf
 )
 
 stow ${dir[@]} --no-folding --adopt

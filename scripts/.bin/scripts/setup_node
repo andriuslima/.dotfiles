@@ -23,7 +23,7 @@ which -s nvm
 if [[ $? != 0 ]] ; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 else
-  log info 'NVM already installed'
+  log warning 'NVM already installed'
 fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

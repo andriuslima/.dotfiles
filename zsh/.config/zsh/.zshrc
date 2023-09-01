@@ -40,6 +40,7 @@ export HISTFILE=$ZDOTDIR/.zhistory # History filepath
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=10000 # Maximum events in history file
 export WORDCHARS=${WORDCHARS//[\/]}
+export PATH=/opt/homebrew/bin/:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/dotnet/:$PATH
 export PATH=$HOME/.bin/jetbrains/:$PATH

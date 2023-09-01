@@ -2,6 +2,5 @@ changeps1: true
 auto_activate_base: true
 ssl_verify: true
 channels:
-  - conda-forg
   - conda-forge
   - defaults

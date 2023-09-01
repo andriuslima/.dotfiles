@@ -27,7 +27,7 @@ conda=(
   jedi
 )
 
-conda config --add channels conda-forg
+conda config --add channels conda-forge
 conda update -n base -c defaults conda --yes
 
 python3 -m pip install --upgrade setuptools

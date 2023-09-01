@@ -57,21 +57,20 @@ casks=(
   postman
   docker
   miniconda
-  iterm2
   alacritty
 )
 
 mas=(
   409183694   # Keynote               (13.0)
-  462058435   # Microsoft Excel       (16.72)
+  409201541   # Pages                 (13.0)
+  409203825   # Numbers               (13.0)
   904280696   # Things                (3.17.5)
   803453959   # Slack                 (4.31.155)
   1147396723  # WhatsApp              (2.2310.9)
-  409201541   # Pages                 (13.0)
-  462054704   # Microsoft Word        (16.72)
   1352778147  # Bitwarden             (2023.3.2)
-  409203825   # Numbers               (13.0)
+  462054704   # Microsoft Word        (16.72)
   462062816   # Microsoft PowerPoint  (16.72)
+  462058435   # Microsoft Excel       (16.72)
 )
 
 brew tap mongodb/brew

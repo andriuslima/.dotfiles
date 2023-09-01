@@ -20,12 +20,13 @@ function log() {
 
 
 if [ ! -d "$HOME/.dotfiles" ]; then
-    log info 'Dotfiles does not exist. Cloning...'
+    log warning 'Dotfiles does not exist. Cloning...'
+    cd $HOME
     git clone git@github.com:andriuslima/.dotfiles.git
 fi
 
 log info 'Linking configuration'
-zsh $HOME/.dotfiles/update
+zsh $HOME/.dotfiles/link
 
 log info 'Running installation script'
 zsh $HOME/.bin/install

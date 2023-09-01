@@ -21,5 +21,3 @@ main() {
 }
 
 main $@
-
-[[ $? -eq 0 ]] && exec zsh || return
