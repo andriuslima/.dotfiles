@@ -30,5 +30,5 @@ else
 fi
 
 mkdir $HOME/.aws
-ln -s $HOME/Documents/Configuration/AWS/credentials $HOME/.aws/credentials
-ln -s $HOME/Documents/Configuration/AWS/config $HOME/.aws/config
+ln -sf $HOME/Documents/Resources/Software\ Development/AWS/credentials $HOME/.aws/credentials
+ln -sf $HOME/Documents/Resources/Software\ Development/AWS/config $HOME/.aws/config
