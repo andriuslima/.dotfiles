@@ -61,16 +61,18 @@ casks=(
 )
 
 mas=(
-  409183694   # Keynote               (13.0)
-  409201541   # Pages                 (13.0)
-  409203825   # Numbers               (13.0)
-  904280696   # Things                (3.17.5)
-  803453959   # Slack                 (4.31.155)
-  1147396723  # WhatsApp              (2.2310.9)
-  1352778147  # Bitwarden             (2023.3.2)
-  462054704   # Microsoft Word        (16.72)
-  462062816   # Microsoft PowerPoint  (16.72)
-  462058435   # Microsoft Excel       (16.72)
+  975937182   # sFantastical           (3.7.21)
+  409183694   # Keynote               (13.1)
+  922744883   # SmartGym              (7.0.2)
+  462058435   # Microsoft Excel       (16.76)
+  904280696   # Things                (3.18.2)
+  803453959   # Slack                 (4.34.115)
+  409201541   # Pages                 (13.1)
+  1147396723  # WhatsApp              (2.2335.9)
+  462054704   # Microsoft Word        (16.76.1)
+  1352778147  # Bitwarden             (2023.8.3)
+  409203825   # Numbers               (13.1)
+  462062816   # Microsoft PowerPoint  (16.76.1)
 )
 
 brew tap mongodb/brew
