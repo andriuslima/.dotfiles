@@ -1,5 +1,5 @@
 {
-  "editor.lineSpacing": 1.1,
+  "editor.lineSpacing": 1.3,
   "editor.showStatusBar": true,
   "editor.showLineNumbers": true,
   "editor.showFileStatus": true,
@@ -20,7 +20,7 @@
   "terminal.fontSize": 12.0,
   "terminal.lineSpacing": 1.0,
   "editor.guides": [120],
-  "editor.renderWhitespace": "All",
+  "editor.renderWhitespace": "None",
   "editor.showTabs": true,
   "editor.showVisualGuides": true,
   "editor.showScrollbarMarks": true,
@@ -33,12 +33,16 @@
   "syncThemeWithOs": false,
   "terminal.fontFamily": "FiraCode Nerd Font Mono",
   "restoreWorkspacesOnStartup": false,
-  "theme": "dark-edited",
+  "theme": "catppuccin-mocha",
   "showEmptyStateOnLastClosedWindow": true,
   "git.push.confirm": false,
   "editor.formatOnSave": true,
   "files.openFileMode": "singleClick",
   "files.toggleFolderMode": "singleClick",
   "terminal.enableFocusEditorOnEsc": true,
-  "goto_panel.showShortcuts": true
+  "goto_panel.showShortcuts": true,
+  "editor.caretShape": "Vertical",
+  "editor.distractionFreeMode": false,
+  "editor.showFileDetails": true,
+  "editor.showStickyLines": true
 }
