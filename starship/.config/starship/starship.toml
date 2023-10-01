@@ -3,8 +3,8 @@ $username\
 $hostname\
 $directory\
 $git_branch\
-$git_state\
 $git_status\
+$git_state\
 $aws\
 $line_break\
 $java\
@@ -12,55 +12,3 @@ $dotnet\
 $nodejs\
 $c\
 $character"""
-
-[directory]
-style = "blue"
-
-[character]
-success_symbol = '[](bold green)'
-error_symbol = '[](bold red)'
-vimcmd_symbol = '[](bold yellow)'
-
-[git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = ""
-untracked = ""
-modified = ""
-staged = ""
-renamed = ""
-deleted = ""
-stashed = "≡"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
-
-[docker_context]
-format = "via [🐋 $context](blue bold)"
-
-[aws]
-format = 'on [$symbol ($profile )(\($region\) )]($style)'
-style = "bold blue"
-symbol = ""
-
-[java]
-format = "via [${symbol} (${version} )]($style)"
-style = "red"
-symbol = ""
-
-[dotnet]
-format = "via [$symbol ($version )(🎯 $tfm )]($style)"
-version_format = "${raw}"
-symbol = ""
-style = "green"
-heuristic = true 
-
-[nodejs]
-format = "via [$symbol $version](bold green) "
-version_format = "${raw}"
-symbol = ""
