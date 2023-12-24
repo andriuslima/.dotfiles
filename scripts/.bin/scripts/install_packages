@@ -20,36 +20,33 @@ function log() {
 log info '|||> Setting packages'
 
 packages=(
-  mas
-  git
-  go
-  maven
-  neofetch
-  openssl
-  ruby
-  rust
-  python
-  neovim
-  yarn
-  zsh
-  aws-sam-cli
-  wget
-  fzf
-  fd
-  ripgrep
-  coreutils
-  exa
-  stow
-  jesseduffield/lazygit/lazygit
-  lua
-  lua-language-server
-  stylua
-  libevent
-  ncurses
-  tmux
-  bat
-  lf
-  zoxide
+    aws-sam-cli
+    bat
+    coreutils
+    exa
+    fd
+    fzf
+    git
+    go
+    jesseduffield/lazygit/lazygit
+    lf
+    libevent
+    lua
+    mas
+    maven
+    ncurses
+    neofetch
+    neovim
+    openssl
+    python@12
+    ripgrep
+    ruby
+    rust
+    stow
+    wget
+    yarn
+    zoxide
+    zsh
 )
 
 casks=(
@@ -57,22 +54,27 @@ casks=(
   postman
   docker
   miniconda
+  gitkraken
+  visual-studio-code
+  zed
 )
 
 mas=(
-  975937182   # Fantastical           (3.7.21)
-  409183694   # Keynote               (13.1)
-  462058435   # Microsoft Excel       (16.76)
-  803453959   # Slack                 (4.34.115)
-  409201541   # Pages                 (13.1)
-  1147396723  # WhatsApp              (2.2335.9)
-  462054704   # Microsoft Word        (16.76.1)
-  1352778147  # Bitwarden             (2023.8.3)
-  409203825   # Numbers               (13.1)
-  462062816   # Microsoft PowerPoint  (16.76.1)
+    975937182   # Fantastical           (3.8.9)
+    409183694   # Keynote               (13.2)
+    408981434   # iMovie                (10.4)
+    425424353   # The Unarchiver        (4.3.6)
+    462058435   # Microsoft Excel       (16.80)
+    803453959   # Slack                 (4.35.131)
+    409201541   # Pages                 (13.2)
+    1529448980  # Reeder                (5.4)
+    310633997   ‎# WhatsApp             (23.25.80)
+    462054704   # Microsoft Word        (16.80)
+    1352778147  # Bitwarden             (2023.12.0)
+    409203825   # Numbers               (13.2)
+    462062816   # Microsoft PowerPoint  (16.80)
 )
 
-brew tap mongodb/brew
 brew tap aws/tap
 
 brew install --quiet ${packages[@]}

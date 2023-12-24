@@ -17,7 +17,7 @@ function log() {
     fi
 }
 
-log info '|||> Setting SDKMAN'
+log info '|||> Installing SDKMAN'
 
 export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 

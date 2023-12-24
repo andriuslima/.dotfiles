@@ -1,10 +1,7 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-plug "zap-zsh/zap-prompt"
-plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
 plug "zap-zsh/completions"
-#plug "zap-zsh/nvm"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "hlissner/zsh-autopair"
@@ -16,17 +13,15 @@ plug "wintermi/zsh-starship"
 # Alias
 alias la='exa --long --icons --all --sort name --created --modified --group --header'
 alias ll='exa --long --icons --all --sort name --header --no-time'
-alias v='nvim'
-alias vim='nvim'
 alias cat='bat'
 alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
 alias dkcompose='docker-compose'
 alias zshconfig='$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc'
 alias dotconfig='$EDITOR $HOME/.dotfiles/'
-alias nvimconfig='$EDITOR $HOME/.dotfiles/neovim/.config/nvim/'
 alias codes='cd $HOME/Codes/'
 alias tsq='cd $HOME/Codes/tsq/'
-alias python='python3'
+alias ca='cd $HOME/Codes/ca/'
+alias python='python3.12'
 alias lg='lazygit'
 alias g='git'
 alias glog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
@@ -54,13 +49,13 @@ export PATH=$HOME/.dotnet/tools:$PATH
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 export GOPATH=$HOME/Codes/go
-export EDITOR=nvim
+export EDITOR=zed
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
 
 # Functions
 function get_project() {
-    find $HOME/Codes/tsq $HOME/Codes/personal $HOME/Codes/projects -mindepth 1 -maxdepth 1 -type d | fzf
+    find $HOME/Codes/tsq $HOME/Codes/ca $HOME/Codes/personal $HOME/Codes/projects -mindepth 1 -maxdepth 1 -type d | fzf
 }
 
 function go_project() {

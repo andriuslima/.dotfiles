@@ -5,7 +5,7 @@
 	rebase = true
 [core]
 	autocrlf = input
-  editor = code --wait
+	editor = code --wait
 [init]
 	defaultBranch = main
 [diff]

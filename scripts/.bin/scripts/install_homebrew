@@ -17,10 +17,11 @@ function log() {
     fi
 }
 
-log info '|||> Setting Homebrew'
+log info '|||> Installing Homebrew'
 
 which -s brew
 if [[ $? != 0 ]] ; then
+    log info 'Homebrew not installed'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
     brew update --force --quiet

@@ -22,13 +22,16 @@ log info '|||> Installing AWS Command Line Interface'
 
 which -s aws
 if [[ $? != 0 ]] ; then
-  curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-  sudo installer -pkg AWSCLIV2.pkg -target /
-  rm AWSCLIV2.pkg
+    log info 'AWS not installed'
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target /
+    rm AWSCLIV2.pkg
 else
     log warning 'AWS CLI already installed'
 fi
 
-mkdir $HOME/.aws
-ln -sf $HOME/Documents/Resources/Software\ Development/AWS/credentials $HOME/.aws/credentials
-ln -sf $HOME/Documents/Resources/Software\ Development/AWS/config $HOME/.aws/config
+if [ -d "$HOME/.aws" ]; then
+    mkdir $HOME/.aws
+    ln -sf $HOME/Documents/Resources/Software\ Development/AWS/credentials $HOME/.aws/credentials
+    ln -sf $HOME/Documents/Resources/Software\ Development/AWS/config $HOME/.aws/config
+fi
