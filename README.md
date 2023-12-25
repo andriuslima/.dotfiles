@@ -2,10 +2,15 @@
 
 ## 1st Steps
 1. Clone repository
-2. Run `.dotfiles/link`
-3. Run `.bin/install_apps`
-4. Run `.bin/setup_tools`
-5. Run `.bin/update_apps`
+2. Configure terminal. Refer to resources folder
+3. Install HomeBrew: `zsh scripts/.bin/scripts/install_homebrew`
+4. Run `eval "$(/opt/homebrew/bin/brew shellenv)"` to have `brew` on your path momentarily
+5. Install GNU Stow: `brew install stow`
+6. Install MAS: `brew install mas`
+7. Run `.dotfiles/link`
+8. Run `.bin/install_apps`
+9. Run `.bin/setup_tools`
+10. Run `.bin/update_apps`
 
 
 ## How to add a module
