@@ -38,11 +38,12 @@ packages=(
     neofetch
     neovim
     openssl
-    python@12
+    python@3.12
     ripgrep
     ruby
     rust
     stow
+    starship
     wget
     yarn
     zoxide
@@ -60,15 +61,15 @@ casks=(
 )
 
 mas=(
-    975937182   # Fantastical           (3.8.9)
+    #975937182   # Fantastical           (3.8.9)
     409183694   # Keynote               (13.2)
     408981434   # iMovie                (10.4)
     425424353   # The Unarchiver        (4.3.6)
     462058435   # Microsoft Excel       (16.80)
     803453959   # Slack                 (4.35.131)
     409201541   # Pages                 (13.2)
-    1529448980  # Reeder                (5.4)
-    310633997   ‎# WhatsApp             (23.25.80)
+    #1529448980  # Reeder                (5.4)
+    310633997   #‎ WhatsApp             (23.25.80)
     462054704   # Microsoft Word        (16.80)
     1352778147  # Bitwarden             (2023.12.0)
     409203825   # Numbers               (13.2)
