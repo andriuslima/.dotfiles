@@ -47,8 +47,8 @@ export WORDCHARS=${WORDCHARS//[\/]}
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 export GOPATH=$HOME/Codes/go
-export EDITOR=zed
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+export EDITOR=code
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
 
 # Functions
