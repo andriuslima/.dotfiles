@@ -31,21 +31,19 @@ alias gca='git commit --amend'
 alias gca!='git commit --amend --no-edit'
 
 # Exports
+# # PATHS
+export PATH=/opt/homebrew/bin/:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/opt/homebrew/opt/dotnet@6/bin:$PATH
+export PATH=$HOME/.bin/jetbrains/:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
+export PATH=$XDG_CONFIG_HOME/yarn/global/node_modules/.bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.dotnet/tools:$PATH
 export HISTFILE=$ZDOTDIR/.zhistory # History filepath
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=10000 # Maximum events in history file
 export WORDCHARS=${WORDCHARS//[\/]}
-export PATH=/opt/homebrew/bin/:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/dotnet/:$PATH
-export PATH=$HOME/.bin/jetbrains/:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
-export PATH=$XDG_CONFIG_HOME/yarn/global/node_modules/.bin:$PATH
-export PATH=$HOME/.local/share/:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.local/google-cloud-sdk/bin:$PATH
-export PATH=$HOME/.local/bin/:$PATH
-export PATH=$HOME/.dotnet/tools:$PATH
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 export GOPATH=$HOME/Codes/go

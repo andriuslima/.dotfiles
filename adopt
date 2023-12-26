@@ -12,6 +12,7 @@ dir=(
     ssh
     starship
     zsh
+    zed
 )
 
 stow ${dir[@]} --no-folding --adopt

@@ -39,6 +39,7 @@ packages=(
     neovim
     openssl
     python@3.12
+    dotnet@6
     ripgrep
     ruby
     rust
@@ -61,7 +62,7 @@ casks=(
 )
 
 mas=(
-    #975937182   # Fantastical           (3.8.9)
+    975937182   # Fantastical           (3.8.9)
     409183694   # Keynote               (13.2)
     408981434   # iMovie                (10.4)
     425424353   # The Unarchiver        (4.3.6)
@@ -74,6 +75,7 @@ mas=(
     1352778147  # Bitwarden             (2023.12.0)
     409203825   # Numbers               (13.2)
     462062816   # Microsoft PowerPoint  (16.80)
+    1339170533  # CleanMyMac X          (4.14.6)
 )
 
 brew tap aws/tap

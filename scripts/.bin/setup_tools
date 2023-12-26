@@ -31,7 +31,7 @@ zsh $HOME/.bin/scripts/setup_fzf
 zsh $HOME/.bin/scripts/setup_macos
 log info '|> Configs set'
 
-sudo echo "$(which zsh)" >> /etc/shells
+# Should be manually added: sudo echo "$(which zsh)" >> /etc/shells
 chsh -s $(which zsh)
 
 log warning 'Reloading shell'
