@@ -22,7 +22,7 @@ log info '|||> Installing fonts'
 brew tap homebrew/cask-fonts
 brew tap shaunsingh/SFMono-Nerd-Font-Ligaturized
 
-log info '||||> Installing Jetbrains Mono'
+log info '||||> Installing Jetbrains Mono Nerd Font'
 brew install --cask font-jetbrains-mono-nerd-font
 
 log info '||||> Installing Fira Code Nerd Font'

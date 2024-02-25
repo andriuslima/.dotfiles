@@ -11,8 +11,8 @@ plug "wintermi/zsh-starship"
 
 
 # Alias
-alias la='exa --long --icons --all --sort name --created --modified --group --header'
-alias ll='exa --long --icons --all --sort name --header --no-time'
+alias la='eza --long --icons --all --sort name --created --modified --group --header'
+alias ll='eza --long --icons --all --sort name --header --no-time'
 alias cat='bat'
 alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
 alias dkcompose='docker-compose'
@@ -85,7 +85,7 @@ shell_reload() {
 lt() {
     local level
     if [[ $# -eq 2 ]] then level=$2 else level=1 fi
-    exa --long --icons --all --sort name --created --modified --group --header --tree --level="$level" ./$1;
+    eza --long --icons --all --sort name --created --modified --group --header --tree --level="$level" ./$1;
 }
 
 profileUpdate() {

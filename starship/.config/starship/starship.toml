@@ -10,5 +10,6 @@ $line_break\
 $java\
 $dotnet\
 $nodejs\
+$bun\
 $c\
 $character"""

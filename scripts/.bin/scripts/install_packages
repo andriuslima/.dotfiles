@@ -22,8 +22,9 @@ log info '|||> Setting packages'
 packages=(
     aws-sam-cli
     bat
+    bun
     coreutils
-    exa
+    eza
     fd
     fzf
     git
@@ -75,10 +76,11 @@ mas=(
     1352778147  # Bitwarden             (2023.12.0)
     409203825   # Numbers               (13.2)
     462062816   # Microsoft PowerPoint  (16.80)
-    1339170533  # CleanMyMac X          (4.14.6)
+    # 1339170533  # CleanMyMac X          (4.14.6)
 )
 
 brew tap aws/tap
+brew tap oven-sh/bun
 
 brew install --quiet ${packages[@]}
 brew install --quiet --cask ${casks[@]}
