@@ -59,7 +59,6 @@ casks=(
   miniconda
   gitkraken
   visual-studio-code
-  zed
 )
 
 mas=(
@@ -70,13 +69,10 @@ mas=(
     462058435   # Microsoft Excel       (16.80)
     803453959   # Slack                 (4.35.131)
     409201541   # Pages                 (13.2)
-    #1529448980  # Reeder                (5.4)
     310633997   #‎ WhatsApp             (23.25.80)
-    462054704   # Microsoft Word        (16.80)
     1352778147  # Bitwarden             (2023.12.0)
     409203825   # Numbers               (13.2)
     462062816   # Microsoft PowerPoint  (16.80)
-    # 1339170533  # CleanMyMac X          (4.14.6)
 )
 
 brew tap aws/tap
