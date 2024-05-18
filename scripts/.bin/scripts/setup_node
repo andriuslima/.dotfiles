@@ -17,22 +17,23 @@ function log() {
     fi
 }
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 log info '|||> Installing NVM'
 
-which -s nvm
-if [[ $? != 0 ]] ; then
+if [ ! -f "$NVM_DIR/nvm.sh" ] ; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 else
   log warning 'NVM already installed'
 fi
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 log info 'Installing node'
 nvm cache clear
 nvm install 18.15.0
-nvm alias default 18.15.0
+nvm install 20.12.2
+nvm alias default 20.12.2
 
 log info 'Installing NPM packages'
 npm install --global nx@latest
+npm install --global aws-cdk

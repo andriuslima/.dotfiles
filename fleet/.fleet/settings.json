@@ -35,7 +35,7 @@
     "restoreWorkspacesOnStartup": false,
     "theme": "dark",
     "showEmptyStateOnLastClosedWindow": true,
-    "git.push.confirm": true,
+    "git.push.confirm": false,
     "editor.formatOnSave": false,
     "files.openFileMode": "singleClick",
     "files.toggleFolderMode": "singleClick",
@@ -49,5 +49,6 @@
     "editor.showCodeVision": true,
     "terminal.bell": false,
     "files.selectOpenedFile": true,
-    "trimTrailingSpacesOnSave": false
+    "trimTrailingSpacesOnSave": false,
+    "editor.showInlayHints": true
 }

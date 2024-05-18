@@ -1,22 +1,21 @@
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+[ -f "$XDG_DATA_HOME/zap/zap.zsh" ] && source "$XDG_DATA_HOME/zap/zap.zsh"
 
-plug "zap-zsh/fzf"
-plug "zap-zsh/completions"
-plug "zsh-users/zsh-autosuggestions"
+# Plugins
 plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/completions"
+plug "zap-zsh/fzf"
 plug "hlissner/zsh-autopair"
 plug "Aloxaf/fzf-tab"
 plug "wintermi/zsh-brew"
-plug "wintermi/zsh-starship"
-
 
 # Alias
 alias la='eza --long --icons --all --sort name --created --modified --group --header'
 alias ll='eza --long --icons --all --sort name --header --no-time'
 alias cat='bat'
 alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
-alias dkcompose='docker-compose'
-alias zshconfig='$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc'
+alias compose='docker-compose'
+alias zshconfig='$EDITOR $ZDOTDIR/'
 alias dotconfig='$EDITOR $HOME/.dotfiles/'
 alias codes='cd $HOME/Codes/'
 alias tsq='cd $HOME/Codes/tsq/'
@@ -27,43 +26,58 @@ alias g='git'
 alias glog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
 alias gs='git status'
 alias gc='git commit -m'
-alias gca='git commit --amend'
-alias gca!='git commit --amend --no-edit'
+alias gca='git commit --amend --no-edit'
 
 # Exports
-# # PATHS
 export PATH=/opt/homebrew/bin/:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/opt/homebrew/opt/dotnet@6/bin:$PATH
-export PATH=$HOME/.bin/jetbrains/:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
-export PATH=$XDG_CONFIG_HOME/yarn/global/node_modules/.bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
-export HISTFILE=$ZDOTDIR/.zhistory # History filepath
+export PATH=$HOME/.bin/jetbrains/:$PATH
+export PATH="$(yarn global bin):$PATH"
+export HISTFILE=$ZDOTDIR/.zsh_history # History filepath
 export HISTSIZE=10000 # Maximum events for internal history
-export SAVEHIST=10000 # Maximum events in history file
+export SAVEHIST=$HISTSIZE # Maximum events in history file
+export HISTDUP=erase
 export WORDCHARS=${WORDCHARS//[\/]}
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 export GOPATH=$HOME/Codes/go
-export EDITOR=code
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export EDITOR=code
+export CODE_DIR=$HOME/Codes
+export CODES_SRC=($CODE_DIR/tsq $CODE_DIR/ca $CODE_DIR/personal $CODE_DIR/projects)
+export EDITORS=("code\nfleet\nidea\nwebstorm\nrider\npycharm\n")
+
+# Options
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # Functions
 function get_project() {
-    find $HOME/Codes/tsq $HOME/Codes/ca $HOME/Codes/personal $HOME/Codes/projects -mindepth 1 -maxdepth 1 -type d | fzf
+    find $CODES_SRC -mindepth 1 -maxdepth 1 -type d | fzf
+}
+
+function get_editors() {
+    echo $EDITORS | fzf
 }
 
 function go_project() {
     cd $(get_project)
 }
 
-
 function open_project() {
-    selected=$(get_project)
-    $($EDITOR $selected)
+    project=$(get_project)
+    editor=$(get_editors)
+
+    $($editor $project)
 }
 
 gwrapper() {
@@ -79,7 +93,7 @@ shell_loading_performance() {
 }
 
 shell_reload() {
-    source $XDG_CONFIG_HOME/zsh/.zshrc
+    source $ZDOTDIR/.zshrc
 }
 
 lt() {
@@ -97,10 +111,10 @@ profileUnset() {
 }
 
 # Keymaps
-zle -N open_project
-bindkey '^p' 'open_project'
-
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+bindkey -e
+bindkey '^x' 'open_project'
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # Conda Settings
 # >>> conda initialize >>>
@@ -118,9 +132,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# gcloud
-if [ -f '/Users/andriuslima/.local/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andriuslima/.local/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Sdkman
 export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -135,3 +146,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Zoxide config
 eval "$(zoxide init zsh)"
+
+#Starship
+eval "$(starship init zsh)"

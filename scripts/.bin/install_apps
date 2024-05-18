@@ -18,11 +18,6 @@ function log() {
     sleep 1
 }
 
-log info '|> Installing macOS necessary softwares and updates.'
-
-softwareupdate --all --install --force
-softwareupdate --install-rosetta --agree-to-license
-
 log info '|> Installing Packages...'
 zsh $HOME/.bin/scripts/install_homebrew
 zsh $HOME/.bin/scripts/install_packages
