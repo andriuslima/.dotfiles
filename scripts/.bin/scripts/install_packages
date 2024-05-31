@@ -57,7 +57,6 @@ casks=(
   postman
   docker
   miniconda
-  gitkraken
   visual-studio-code
 )
 
