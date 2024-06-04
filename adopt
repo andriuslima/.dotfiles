@@ -6,13 +6,11 @@ dir=(
     git
     java
     lf
-    neofetch
     scripts
     sdkman
     ssh
     starship
     zsh
-    zed
 )
 
 stow ${dir[@]} --no-folding --adopt

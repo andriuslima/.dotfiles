@@ -29,14 +29,11 @@ packages=(
     fzf
     git
     go
-    jesseduffield/lazygit/lazygit
-    lf
     libevent
     lua
     mas
     maven
     ncurses
-    neofetch
     neovim
     openssl
     python@3.12
