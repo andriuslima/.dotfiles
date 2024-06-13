@@ -58,7 +58,6 @@ casks=(
 )
 
 mas=(
-    975937182   # Fantastical           (3.8.9)
     409183694   # Keynote               (13.2)
     408981434   # iMovie                (10.4)
     425424353   # The Unarchiver        (4.3.6)
