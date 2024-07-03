@@ -2,10 +2,7 @@
 
 dir=(
     conda
-    fleet
     git
-    java
-    lf
     scripts
     sdkman
     ssh

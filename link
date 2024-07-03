@@ -2,15 +2,12 @@
 
 dir=(
     conda
-    fleet
     git
-    java
-    lf
     scripts
     sdkman
     ssh
     starship
-    zsh
+    z
 )
 
 stow ${dir[@]} --no-folding --restow

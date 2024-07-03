@@ -21,7 +21,6 @@ alias codes='cd $HOME/Codes/'
 alias tsq='cd $HOME/Codes/tsq/'
 alias ca='cd $HOME/Codes/ca/'
 alias python='python3.12'
-alias lg='lazygit'
 alias g='git'
 alias glog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
 alias gs='git status'
@@ -42,14 +41,13 @@ export HISTDUP=erase
 export WORDCHARS=${WORDCHARS//[\/]}
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
-export GOPATH=$HOME/Codes/go
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-export EDITOR=code
 export CODE_DIR=$HOME/Codes
 export CODES_SRC=($CODE_DIR/tsq $CODE_DIR/ca $CODE_DIR/personal $CODE_DIR/projects)
-export EDITORS=("code\nfleet\nidea\nwebstorm\nrider\npycharm\n")
+export EDITORS=("code\n\nidea\nwebstorm\nrider\npycharm\n")
+export EDITOR=code
 
 # Options
 setopt appendhistory
@@ -98,16 +96,8 @@ shell_reload() {
 
 lt() {
     local level
-    if [[ $# -eq 2 ]] then level=$2 else level=1 fi
+    if [[ $# -eq 2 ]] then level=$2 else level=2 fi
     eza --long --icons --all --sort name --created --modified --group --header --tree --level="$level" ./$1;
-}
-
-profileUpdate() {
-    export AWS_PROFILE=$1
-}
-
-profileUnset() {
-    unset AWS_PROFILE
 }
 
 # Keymaps
@@ -143,9 +133,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
-
-# Zoxide config
-eval "$(zoxide init zsh)"
 
 #Starship
 eval "$(starship init zsh)"

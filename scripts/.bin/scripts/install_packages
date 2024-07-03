@@ -23,29 +23,19 @@ packages=(
     aws-sam-cli
     bat
     bun
-    coreutils
     eza
-    fd
     fzf
     git
-    go
-    libevent
-    lua
     mas
     maven
-    ncurses
     neovim
     openssl
     python@3.12
     dotnet@6
-    ripgrep
-    ruby
-    rust
     stow
     starship
     wget
     yarn
-    zoxide
     zsh
 )
 
@@ -60,7 +50,6 @@ casks=(
 mas=(
     409183694   # Keynote               (13.2)
     408981434   # iMovie                (10.4)
-    425424353   # The Unarchiver        (4.3.6)
     462058435   # Microsoft Excel       (16.80)
     803453959   # Slack                 (4.35.131)
     409201541   # Pages                 (13.2)

@@ -29,11 +29,3 @@ if [[ $? != 0 ]] ; then
 else
     log warning 'AWS CLI already installed'
 fi
-
-if [ ! -d "$HOME/.aws" ]; then
-    mkdir $HOME/.aws
-    ln -sf $HOME/Documents/Resources/Software\ Development/AWS/credentials $HOME/.aws/credentials
-    ln -sf $HOME/Documents/Resources/Software\ Development/AWS/config $HOME/.aws/config
-else
-    log info "AWS config directory already exists"
-fi
