@@ -45,6 +45,7 @@ casks=(
   docker
   miniconda
   visual-studio-code
+  logitune
 )
 
 mas=(
