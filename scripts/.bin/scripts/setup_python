@@ -27,7 +27,7 @@ conda=(
   jedi
 )
 
-python3 -m pip install --upgrade setuptools
-python3 -m pip install --upgrade pip
+# python -m pip install --upgrade setuptools
+# python -m pip install --upgrade pip
 
 conda install --name base ${conda[@]} --yes
