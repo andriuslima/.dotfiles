@@ -17,18 +17,16 @@ function log() {
     fi
 }
 
-#log info '|||> Setting macOS Settings'
+log info '|||> Setting macOS Settings'
 
-# defaults write com.apple.dock "show-recents" -bool "false"
-# defaults write com.apple.dock "tilesize" -int "55"
-# defaults write com.apple.dock "autohide" -bool "true"
-# defaults write com.apple.dock "static-only" -bool false
-# defaults write com.apple.dock autohide-time-modifier -int 0
-# defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "2"
-# defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE d MMM HH:mm\""
+log info '|||> Setting Dock'
+defaults write com.apple.dock "show-recents" -int 0
+defaults write com.apple.dock "tilesize" -int 50
+defaults write com.apple.dock "autohide" -int 0
+defaults write com.apple.dock "magnification" -int 0
+killall Dock
 
-# killall Dock
-# killall systemuiserver
+log info '|||> Setting Directories'
 
 if [ ! -d "$HOME/Codes/tsq/" ]; then
   mkdir -p $HOME/Codes/tsq/
