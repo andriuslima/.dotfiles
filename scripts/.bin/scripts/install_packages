@@ -17,7 +17,7 @@ function log() {
     fi
 }
 
-log info '|||> Setting packages'
+log info '|||> Installing packages'
 
 packages=(
     aws-sam-cli
@@ -31,7 +31,7 @@ packages=(
     neovim
     openssl
     python@3.12
-    dotnet@6
+    dotnet@8
     stow
     starship
     wget
@@ -45,18 +45,19 @@ casks=(
   docker
   miniconda
   visual-studio-code
-  logitune
+  logitune # Manual installer necessary
 )
 
 mas=(
-    409183694   # Keynote               (13.2)
-    408981434   # iMovie                (10.4)
-    462058435   # Microsoft Excel       (16.80)
-    803453959   # Slack                 (4.35.131)
-    409201541   # Pages                 (13.2)
-    310633997   #‎ WhatsApp             (23.25.80)
-    409203825   # Numbers               (13.2)
-    462062816   # Microsoft PowerPoint  (16.80)
+    408981434   # iMovie                (10.4.1)
+    462058435   # Microsoft Excel       (16.87)
+    409201541   # Pages                 (14.1)
+    310633997   # ‎WhatsApp             (24.14.85)
+    409183694   # Keynote               (14.1)
+    462062816   # Microsoft PowerPoint  (16.87)
+    803453959   # Slack                 (4.39.90)
+    462054704   # Microsoft Word        (16.87)
+    409203825   # Numbers               (14.1)
 )
 
 brew tap aws/tap

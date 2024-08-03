@@ -30,10 +30,10 @@ alias gca='git commit --amend --no-edit'
 # Exports
 export PATH=/opt/homebrew/bin/:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/opt/homebrew/opt/dotnet@6/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.bin/jetbrains/:$PATH
 export PATH="$(yarn global bin):$PATH"
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 export HISTFILE=$ZDOTDIR/.zsh_history # History filepath
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=$HISTSIZE # Maximum events in history file
