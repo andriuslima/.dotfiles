@@ -21,7 +21,7 @@ log info '|||> Setting macOS Settings'
 
 log info '|||> Setting Dock'
 defaults write com.apple.dock "show-recents" -int 0
-defaults write com.apple.dock "tilesize" -int 50
+defaults write com.apple.dock "tilesize" -int 65
 defaults write com.apple.dock "autohide" -int 0
 defaults write com.apple.dock "magnification" -int 0
 killall Dock
