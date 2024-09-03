@@ -31,7 +31,6 @@ packages=(
     neovim
     openssl
     python@3.12
-    dotnet@8
     stow
     starship
     wget
