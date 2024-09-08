@@ -39,12 +39,11 @@ packages=(
 )
 
 casks=(
-  jetbrains-toolbox
   postman
   docker
   miniconda
   visual-studio-code
-  logitune # Manual installer necessary
+  arc
 )
 
 mas=(
