@@ -28,7 +28,6 @@ packages=(
     git
     mas
     maven
-    neovim
     openssl
     python@3.12
     stow
@@ -39,7 +38,6 @@ packages=(
 )
 
 casks=(
-  postman
   docker
   miniconda
   visual-studio-code
@@ -47,7 +45,6 @@ casks=(
 )
 
 mas=(
-    408981434   # iMovie                (10.4.1)
     462058435   # Microsoft Excel       (16.87)
     409201541   # Pages                 (14.1)
     310633997   # ‎WhatsApp             (24.14.85)
