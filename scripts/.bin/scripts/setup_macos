@@ -24,6 +24,7 @@ defaults write com.apple.dock "show-recents" -int 0
 defaults write com.apple.dock "tilesize" -int 65
 defaults write com.apple.dock "autohide" -int 0
 defaults write com.apple.dock "magnification" -int 0
+defaults write com.apple.mouse.scaling -int 5
 killall Dock
 
 log info '|||> Setting Directories'
