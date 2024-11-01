@@ -25,5 +25,4 @@ brew upgrade --cask --quiet
 mas upgrade
 brew autoremove --quiet
 brew cleanup -s --prune=all --quiet
-
-log info '|> Setup completed'
+log info '|> Update completed'

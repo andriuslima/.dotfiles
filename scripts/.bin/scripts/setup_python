@@ -22,9 +22,7 @@ log info '|||> Setting Python packages'
 conda=(
   boto3
   awscli-local
-  pynvim
   pylint
-  jedi
 )
 
 # python -m pip install --upgrade setuptools

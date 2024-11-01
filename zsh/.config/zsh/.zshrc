@@ -13,8 +13,6 @@ plug "wintermi/zsh-brew"
 alias la='eza --long --icons --all --sort name --created --modified --group --header'
 alias ll='eza --long --icons --all --sort name --header --no-time'
 alias cat='bat'
-alias dkmonitor='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}"'
-alias compose='docker-compose'
 alias zshconfig='$EDITOR $ZDOTDIR/'
 alias dotconfig='$EDITOR $HOME/.dotfiles/'
 alias codes='cd $HOME/Codes/'
