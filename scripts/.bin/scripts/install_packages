@@ -55,6 +55,7 @@ mas=(
     462054704   # Microsoft Word
     409203825   # Numbers
     975937182   # Fantastical
+    823766827   # OneDrive
 )
 
 brew tap aws/tap
