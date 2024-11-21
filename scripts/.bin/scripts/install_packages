@@ -38,10 +38,8 @@ packages=(
 )
 
 casks=(
-  docker
   miniconda
   visual-studio-code
-  arc
   postman
 )
 
@@ -54,7 +52,6 @@ mas=(
     803453959   # Slack
     462054704   # Microsoft Word
     409203825   # Numbers
-    975937182   # Fantastical
     823766827   # OneDrive
 )
 
