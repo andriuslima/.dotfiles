@@ -15,8 +15,17 @@ function log() {
     else
         echo -e "${RED}$message${NOCOLOR}"
     fi
+    sleep 1
 }
 
-log info '|||> Setting FZF'
-
-$(brew --prefix)/opt/fzf/install --no-bash --no-fish --no-update-rc --key-bindings --completion --xdg --all
+log info '|> Installing Apps...'
+zsh $HOME/.bin/install_aws.sh
+zsh $HOME/.bin/install_bun.sh
+zsh $HOME/.bin/install_fzf.sh
+zsh $HOME/.bin/install_node.sh
+zsh $HOME/.bin/install_python.sh
+zsh $HOME/.bin/install_sdkman.sh
+zsh $HOME/.bin/install_starship.sh
+zsh $HOME/.bin/install_stow.sh
+zsh $HOME/.bin/install_zshzap.sh
+log info '|> Packages set'

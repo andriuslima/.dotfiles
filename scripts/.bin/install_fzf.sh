@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# Documentation: https://github.com/junegunn/fzf
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -15,14 +17,15 @@ function log() {
     else
         echo -e "${RED}$message${NOCOLOR}"
     fi
-    sleep 1
 }
 
-log info '|> Installing Packages...'
-zsh $HOME/.bin/scripts/install_homebrew
-zsh $HOME/.bin/scripts/install_packages
-zsh $HOME/.bin/scripts/install_aws
-zsh $HOME/.bin/scripts/install_sdkman
-zsh $HOME/.bin/scripts/install_fonts
-zsh $HOME/.bin/scripts/install_zshzap
-log info '|> Packages set'
+log info 'Installing FZF'
+
+fzf_dir=${XDG_CONFIG_HOME}/fzf
+
+if [ ! -d "$fzf_dir" ] ; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $fzf_dir
+    $fzf_dir/install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
+else
+    log info 'FZF already installed'
+fi

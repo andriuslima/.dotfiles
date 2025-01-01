@@ -17,12 +17,8 @@ function log() {
     fi
     sleep 1
 }
- 
-log info '|> Updating Applications...'
-brew upgrade --quiet
-brew update --quiet
-brew upgrade --cask --quiet
-mas upgrade
-brew autoremove --quiet
-brew cleanup -s --prune=all --quiet
-log info '|> Update completed'
+
+log info 'Installing apps'
+
+zsh $HOME/.bin/install_apps.sh
+zsh $HOME/.bin/setup_tools.sh

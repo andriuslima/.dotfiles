@@ -12,4 +12,8 @@ $dotnet\
 $nodejs\
 $bun\
 $c\
+$conda\
 $character"""
+
+[conda]
+ignore_base = false

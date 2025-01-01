@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 dir=(
-    conda
     git
     scripts
     sdkman

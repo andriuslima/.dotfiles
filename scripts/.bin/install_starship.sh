@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# Documentation: https://bun.sh/docs/installation
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -17,9 +19,14 @@ function log() {
     fi
 }
 
-log info '|||> Installing fonts'
+log info 'Installing Starship'
 
-brew tap homebrew/cask-fonts
+exists=$+commands[starship]
 
-log info '||||> Installing Jetbrains Mono Nerd Font'
-brew install --cask font-jetbrains-mono-nerd-font
+if [[ ! exists ]]; then
+    curl -sS https://starship.rs/install.sh --output starship-installer.sh
+    sh starship-installer.sh --bin-dir /usr/local/bin --yes
+    rm starship-installer.sh
+else
+    log info 'Starship already installed'
+fi

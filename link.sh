@@ -1,13 +1,12 @@
 #!/usr/bin/env zsh
 
 dir=(
-    conda
     git
     scripts
     sdkman
     ssh
     starship
-    z
+    zsh
 )
 
 stow ${dir[@]} --no-folding --restow

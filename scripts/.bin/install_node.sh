@@ -18,14 +18,19 @@ function log() {
 }
 
 
-log info '|||> Installing AWS Command Line Interface'
+log info '|||> Installing NVM'
 
-which -s aws
-if [[ $? != 0 ]] ; then
-    log info 'AWS not installed'
-    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-    sudo installer -pkg AWSCLIV2.pkg -target /
-    rm AWSCLIV2.pkg
+export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+
+if [ ! -f "$NVM_DIR/nvm.sh" ] ; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 else
-    log warning 'AWS CLI already installed'
+    log info 'NVM already installed'
 fi
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+log info 'Installing node'
+nvm cache clear
+nvm install 20.12.2
+nvm alias default 20.12.2

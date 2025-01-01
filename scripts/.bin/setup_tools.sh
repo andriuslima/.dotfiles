@@ -15,17 +15,12 @@ function log() {
     else
         echo -e "${RED}$message${NOCOLOR}"
     fi
+    sleep 1
 }
 
-log info '|||> Setting Python packages'
+log info '|> Setting configs'
+zsh $HOME/.bin/scripts/setup_ssh.sh
+zsh $HOME/.bin/scripts/setup_macos.sh
 
-conda=(
-  boto3
-  awscli-local
-  pylint
-)
-
-# python -m pip install --upgrade setuptools
-# python -m pip install --upgrade pip
-
-conda install --name base ${conda[@]} --yes
+log warning 'Reloading shell'
+source $XDG_CONFIG_HOME/zsh/.zshrc

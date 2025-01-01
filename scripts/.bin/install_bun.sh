@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# Documentation: https://bun.sh/docs/installation
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -17,10 +19,13 @@ function log() {
     fi
 }
 
-log info '|||> Setting Java versions'
+log info 'Installing Bun'
 
-source "$SDKMAN_DIR/bin/sdkman-init.sh"
+exists=$+commands[bun]
 
-sdk install java 21.0.2-amzn
-
-sdk default java 21.0.2-amzn
+if [[ ! exists ]]; then
+    export BUN_INSTALL="$HOME/.bun"
+    curl -fsSL https://bun.sh/install | bash
+else
+    log info 'Bun already installed'
+fi

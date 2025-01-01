@@ -17,15 +17,15 @@ function log() {
     fi
 }
 
-log info '|||> Installing SDKMAN'
 
-export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
+log info '|||> Installing AWS Command Line Interface'
 
-if [ ! -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
-  log warning 'sdkman-init.sh not found, installing it'
-  curl -s "https://get.sdkman.io?rcupdate=false" | bash
+exists=$+commands[aws]
+if [[ ! exists ]]; then
+    log info 'Installing AWS CLI'
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target /
+    rm AWSCLIV2.pkg
 else
-    log warning 'SDKMAN already installed, updating'
-    source "$SDKMAN_DIR/bin/sdkman-init.sh"
-    sdk update
+    log info 'AWS CLI already installed'
 fi
