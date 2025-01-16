@@ -23,7 +23,7 @@ log info 'Installing Starship'
 
 exists=$+commands[starship]
 
-if [[ ! exists ]]; then
+if [ $exists -eq 0 ]; then
     curl -sS https://starship.rs/install.sh --output starship-installer.sh
     sh starship-installer.sh --bin-dir /usr/local/bin --yes
     rm starship-installer.sh

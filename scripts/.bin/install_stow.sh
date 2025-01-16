@@ -20,9 +20,9 @@ function log() {
 
 log info '|||> Installing GNU Stow'
 
-exists=$+commands[starship]
+exists=$+commands[stow]
 
-if [[ ! exists ]]; then
+if [ $exists -eq 0 ]; then
     currentDir=${pwd}
     curl -sS https://mirrors.ibiblio.org/gnu/stow/stow-2.4.1.tar.gz --output stow-2.4.1.tar.gz
     tar --extract --file stow-2.4.1.tar.gz

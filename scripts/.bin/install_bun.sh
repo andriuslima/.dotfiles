@@ -23,7 +23,7 @@ log info 'Installing Bun'
 
 exists=$+commands[bun]
 
-if [[ ! exists ]]; then
+if [ $exists -eq 0 ]; then
     export BUN_INSTALL="$HOME/.bun"
     curl -fsSL https://bun.sh/install | bash
 else

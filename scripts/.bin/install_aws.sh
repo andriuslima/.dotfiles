@@ -21,7 +21,8 @@ function log() {
 log info '|||> Installing AWS Command Line Interface'
 
 exists=$+commands[aws]
-if [[ ! exists ]]; then
+
+if [ $exists -eq 0 ]; then
     log info 'Installing AWS CLI'
     curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
     sudo installer -pkg AWSCLIV2.pkg -target /

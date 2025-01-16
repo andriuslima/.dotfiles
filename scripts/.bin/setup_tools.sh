@@ -19,8 +19,5 @@ function log() {
 }
 
 log info '|> Setting configs'
-zsh $HOME/.bin/scripts/setup_ssh.sh
-zsh $HOME/.bin/scripts/setup_macos.sh
-
-log warning 'Reloading shell'
-source $XDG_CONFIG_HOME/zsh/.zshrc
+zsh $HOME/.bin/setup_ssh.sh
+zsh $HOME/.bin/setup_macos.sh
