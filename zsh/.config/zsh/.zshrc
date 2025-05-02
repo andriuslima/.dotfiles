@@ -35,7 +35,7 @@ export SAVEHIST=$HISTSIZE # Maximum events in history file
 export HISTDUP=erase
 export WORDCHARS=${WORDCHARS//[\/]}
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-export EDITOR=code
+export EDITOR=vim
 export BUN_INSTALL="$HOME/.bun"
 
 # Options

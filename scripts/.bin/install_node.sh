@@ -33,4 +33,5 @@ fi
 log info 'Installing node'
 nvm cache clear
 nvm install 20.12.2
+nvm install 22.15.0
 nvm alias default 20.12.2

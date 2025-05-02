@@ -1,18 +1,3 @@
 [user]
-	email = andrius.lima@townsq.com.br
 	name = Andrius Lima
-[pull]
-	rebase = true
-[core]
-	autocrlf = input
-	editor = code
-[init]
-	defaultBranch = main
-[diff]
-  tool = vscode
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
-  tool = vscode
-[mergetool "vscode"]
-  cmd = code --wait $MERGED
+	email = andrius.lima@townsq.com.br
