@@ -2,6 +2,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export DOTNET_ROOT="/usr/local/share/dotnet"
 export ZAP_DIR="$XDG_DATA_HOME/zap"
 export SDKMAN_DIR=$XDG_CONFIG_HOME/sdkman
 export NVM_DIR=$XDG_CONFIG_HOME/nvm

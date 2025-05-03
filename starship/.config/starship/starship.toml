@@ -15,5 +15,13 @@ $c\
 $conda\
 $character"""
 
+[git_branch]
+symbol = ''
+style = 'bold purple'
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
 [conda]
 ignore_base = false

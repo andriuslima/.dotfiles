@@ -7,13 +7,10 @@ plug "zap-zsh/completions"
 plug "zap-zsh/fzf"
 plug "hlissner/zsh-autopair"
 plug "Aloxaf/fzf-tab"
-plug "wintermi/zsh-brew"
 
 # Alias
 alias ll='ls -l'
 alias la='ls -la'
-alias zshconfig='$EDITOR $ZDOTDIR/'
-alias dotconfig='$EDITOR $HOME/.dotfiles/'
 alias codes='cd $HOME/Codes/'
 alias tsq='cd $HOME/Codes/tsq/'
 alias ca='cd $HOME/Codes/ca/'
@@ -24,19 +21,19 @@ alias gc='git commit -m'
 alias gca='git commit --amend --no-edit'
 
 # Exports
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.dotnet/tools:$PATH
-export PATH=$BUN_INSTALL/bin:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
-export DOTNET_ROOT="/usr/local/share/dotnet"
 export HISTFILE=$ZDOTDIR/.zsh_history # History filepath
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=$HISTSIZE # Maximum events in history file
 export HISTDUP=erase
-export WORDCHARS=${WORDCHARS//[\/]}
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export WORDCHARS=${WORDCHARS//[\/]}
 export EDITOR=vim
-export BUN_INSTALL="$HOME/.bun"
+
+# Path
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.dotnet/tools:$PATH
+export PATH=$BUN_INSTALL/bin:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
 
 # Options
 setopt appendhistory
