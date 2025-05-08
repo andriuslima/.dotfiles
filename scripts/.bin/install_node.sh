@@ -35,3 +35,7 @@ nvm cache clear
 nvm install 20.12.2
 nvm install 22.15.0
 nvm alias default 20.12.2
+nvm alias default 20.12.2
+
+log info 'Installing NPM packages'
+npm i -g @nestjs/cli
