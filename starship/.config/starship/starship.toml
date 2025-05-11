@@ -25,3 +25,6 @@ format = '([$all_status$ahead_behind]($style) )'
 
 [conda]
 ignore_base = false
+
+[nodejs]
+symbol = 'node:'
