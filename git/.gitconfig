@@ -1,3 +1,5 @@
 [user]
 	name = Andrius Lima
 	email = andrius.lima@townsq.com.br
+[pull]
+	rebase = true
