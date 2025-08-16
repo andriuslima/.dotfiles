@@ -17,7 +17,6 @@ function log() {
     fi
 }
 
-
 log info '|||> Installing NVM'
 
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
@@ -34,8 +33,8 @@ log info 'Installing node'
 nvm cache clear
 nvm install 20.12.2
 nvm install 22.15.0
-nvm alias default 20.12.2
-nvm alias default 20.12.2
+nvm alias default 22.15.0
 
 log info 'Installing NPM packages'
-npm i -g @nestjs/cli
+npm install -g @nestjs/cli
+npm install -g pnpm@latest-10
