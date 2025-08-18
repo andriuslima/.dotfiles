@@ -19,6 +19,7 @@ function log() {
 }
 
 log info 'Installing apps'
-
 zsh $HOME/.bin/install_apps.sh
+
+log info 'Setting tools'
 zsh $HOME/.bin/setup_tools.sh

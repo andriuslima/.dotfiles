@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
-dir=(
-    git
-    scripts
-    sdkman
-    ssh
-    starship
-    zsh
+modules=(
+git
+scripts
+sdkman
+ssh
+starship
+zsh
 )
 
-stow ${dir[@]} --no-folding --adopt
+stow ${modules[@]} --no-folding --adopt
 
