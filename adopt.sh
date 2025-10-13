@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-modules=(
+dir=(
+modules
 git
 scripts
 sdkman
@@ -9,5 +10,4 @@ starship
 zsh
 )
 
-stow ${modules[@]} --no-folding --adopt
-
+stow ${dir[@]} --no-folding --adopt

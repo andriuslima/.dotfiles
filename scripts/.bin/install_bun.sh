@@ -27,5 +27,6 @@ if [ $exists -eq 0 ]; then
     export BUN_INSTALL="$HOME/.bun"
     curl -fsSL https://bun.sh/install | bash
 else
-    log info 'Bun already installed'
+    log info 'Bun already installed. Performing update'
+    bun upgrade
 fi

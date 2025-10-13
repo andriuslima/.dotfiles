@@ -4,6 +4,8 @@
 # First need to delete the directory, installed it and then stow link again.
 
 
+
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -26,13 +28,14 @@ log info '|||> Installing SDKMAN'
 export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 
 if [ ! -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
-  curl -s "https://get.sdkman.io?rcupdate=false" | bash
+    curl -s "https://get.sdkman.io?rcupdate=false" | bash
 else
     log info 'SDKMAN already installed'
 fi
 
 source "$SDKMAN_DIR/bin/sdkman-init.sh"
 sdk update
+sdk selfupdate
 
 log info '|||> Setting Gradle'
 sdk install gradle 8.7

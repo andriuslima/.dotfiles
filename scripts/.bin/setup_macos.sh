@@ -17,30 +17,20 @@ function log() {
     fi
 }
 
-log info '|||> Setting macOS Settings'
-
-log info '|||> Setting Dock'
-defaults write com.apple.dock "show-recents" -int 0
-defaults write com.apple.dock "tilesize" -int 65
-defaults write com.apple.dock "autohide" -int 0
-defaults write com.apple.dock "magnification" -int 0
-defaults write com.apple.mouse.scaling -int 5
-killall Dock
-
-log info '|||> Setting Directories'
-
-if [ ! -d "$HOME/Codes/tsq/" ]; then
-  mkdir -p $HOME/Codes/tsq/
-fi
-
-if [ ! -d "$HOME/Codes/ca/" ]; then
-  mkdir -p $HOME/Codes/ca/
-fi
-
-if [ ! -d "$HOME/Codes/personal/" ]; then
-  mkdir -p $HOME/Codes/personal/
-fi
-
-if [ ! -d "$HOME/Codes/projects/" ]; then
-  mkdir -p $HOME/Codes/projects/
-fi
+#log info '|||> Setting Directories'
+#
+#if [ ! -d "$HOME/Codes/tsq/" ]; then
+#    mkdir -p $HOME/Codes/tsq/
+#fi
+#
+#if [ ! -d "$HOME/Codes/ca/" ]; then
+#    mkdir -p $HOME/Codes/ca/
+#fi
+#
+#if [ ! -d "$HOME/Codes/personal/" ]; then
+#    mkdir -p $HOME/Codes/personal/
+#fi
+#
+#if [ ! -d "$HOME/Codes/projects/" ]; then
+#    mkdir -p $HOME/Codes/projects/
+#fi

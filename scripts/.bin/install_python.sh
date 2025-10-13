@@ -26,8 +26,9 @@ if [ ! -d "$HOME/miniconda3" ]; then
     bash $HOME/miniconda3/miniconda.sh -b -u -p $HOME/miniconda3
     rm $HOME/miniconda3/miniconda.sh
 else
-    log info 'miniconda3 already installed'
+    log info 'miniconda3 already installed. Performing update'
     source $HOME/miniconda3/bin/activate
+    conda update conda --yes
 fi
 
 conda config --quiet --add channels conda-forge --quiet

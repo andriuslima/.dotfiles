@@ -27,5 +27,6 @@ if [ ! -d "$fzf_dir" ] ; then
     git clone --depth 1 https://github.com/junegunn/fzf.git $fzf_dir
     $fzf_dir/install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
 else
-    log info 'FZF already installed'
+    log info 'FZF already installed. Performing Update'
+    cd $fzf_dir && git pull && ./install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
 fi

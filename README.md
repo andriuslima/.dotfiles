@@ -16,5 +16,5 @@
 3. Update `.dotfiles/adopt
 
 ## Documentation
-
 [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html)
+- `--no-folding`: Prevents the program from creating fewer symbolic links by "folding" entire subdirectories into a single symlink. Instead, `--no-folding` ensures that every file and directory from the package is symlinked individually, even if it means creating a lot more symlinks and directories in the target location.

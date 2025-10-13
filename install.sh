@@ -18,8 +18,8 @@ function log() {
     sleep 1
 }
 
-log info 'Installing apps'
+log info 'Installing Apps'
 zsh $HOME/.bin/install_apps.sh
 
-log info 'Setting tools'
+log info 'Setting Tools'
 zsh $HOME/.bin/setup_tools.sh

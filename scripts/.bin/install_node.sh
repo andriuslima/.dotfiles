@@ -24,7 +24,8 @@ export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 if [ ! -f "$NVM_DIR/nvm.sh" ] ; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 else
-    log info 'NVM already installed'
+    log info 'NVM already installed. Performing update'
+    cd $NVM_DIR && ./install.sh
 fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -35,6 +36,9 @@ nvm install 20.12.2
 nvm install 22.15.0
 nvm alias default 22.15.0
 
+nvm use default 22.15.0
+
 log info 'Installing NPM packages'
 npm install -g @nestjs/cli
 npm install -g pnpm@latest-10
+npm i -g npm@11.6.2

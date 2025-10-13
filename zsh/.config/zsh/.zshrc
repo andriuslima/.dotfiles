@@ -98,3 +98,11 @@ source <(fzf --zsh)
 #Starship
 eval "$(starship init zsh)"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+
+# pnpm
+export PNPM_HOME="/Users/andriuslima/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

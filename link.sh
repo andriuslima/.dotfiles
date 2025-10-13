@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 modules=(
+codes
 git
 scripts
 sdkman

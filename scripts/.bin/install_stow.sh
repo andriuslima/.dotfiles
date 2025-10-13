@@ -17,7 +17,6 @@ function log() {
     fi
 }
 
-
 log info '|||> Installing GNU Stow'
 
 exists=$+commands[stow]
