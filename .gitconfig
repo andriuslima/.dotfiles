@@ -1,0 +1,5 @@
+[user]
+	name = Andrius Lima
+	email = andriuslima@icloud.com
+[pull]
+	rebase = true
