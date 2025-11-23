@@ -29,3 +29,7 @@ zsh $HOME/.bin/install_starship.sh
 zsh $HOME/.bin/install_stow.sh
 zsh $HOME/.bin/install_zshzap.sh
 log info '|> Packages set'
+
+log info '|> Setting configs'
+zsh $HOME/.bin/setup_ssh.sh
+log info '|> Configs set'
