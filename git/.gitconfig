@@ -1,5 +1,8 @@
 [user]
 	name = Andrius Lima
-	email = andrius.lima@hoamtechnology.com
+	email = andriuslima@icloud.com
 [pull]
 	rebase = true
+
+[includeIf "gitdir:/Users/andriuslima/Codes/ca/"]
+	path = /Users/andriuslima/.gitconfig_work

@@ -17,20 +17,20 @@ function log() {
     fi
 }
 
-#log info '|||> Setting Directories'
-#
-#if [ ! -d "$HOME/Codes/tsq/" ]; then
-#    mkdir -p $HOME/Codes/tsq/
-#fi
-#
-#if [ ! -d "$HOME/Codes/ca/" ]; then
-#    mkdir -p $HOME/Codes/ca/
-#fi
-#
-#if [ ! -d "$HOME/Codes/personal/" ]; then
-#    mkdir -p $HOME/Codes/personal/
-#fi
-#
-#if [ ! -d "$HOME/Codes/projects/" ]; then
-#    mkdir -p $HOME/Codes/projects/
-#fi
+log info '|||> Setting Directories'
+
+if [ ! -d "$HOME/Codes/tsq/" ]; then
+    mkdir -p $HOME/Codes/tsq/
+fi
+
+if [ ! -d "$HOME/Codes/ca/" ]; then
+    mkdir -p $HOME/Codes/ca/
+fi
+
+if [ ! -d "$HOME/Codes/personal/" ]; then
+    mkdir -p $HOME/Codes/personal/
+fi
+
+if [ ! -d "$HOME/Codes/projects/" ]; then
+    mkdir -p $HOME/Codes/projects/
+fi
