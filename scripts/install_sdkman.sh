@@ -3,9 +3,6 @@
 # If SDKMAN directory exsists it will not be installed.
 # First need to delete the directory, installed it and then stow link again.
 
-
-
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
@@ -15,27 +12,25 @@ function log() {
     level=$1
     message=$2
     if [[ $level = 'info' ]]; then
-        echo -e "${GREEN}$message${NOCOLOR}"
+        echo "${GREEN}$message${NOCOLOR}"
     elif [[ $level = 'warning' ]]; then
-        echo -e "${YELLOW}$message${NOCOLOR}"
+        echo "${YELLOW}$message${NOCOLOR}"
     else
-        echo -e "${RED}$message${NOCOLOR}"
+        echo "${RED}$message${NOCOLOR}"
     fi
 }
 
-log info '|||> Installing SDKMAN'
-
-export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
-
-if [ ! -f "$SDKMAN_DIR/bin/sdkman-init.sh" ]; then
-    curl -s "https://get.sdkman.io?rcupdate=false" | bash
-else
+source "$XDG_CONFIG_HOME/sdkman/bin/sdkman-init.sh"
+if command -v sdk &>/dev/null; then
     log info 'SDKMAN already installed'
+else
+    log info 'Installing: SDKMAN'
+    curl -s "https://get.sdkman.io?rcupdate=false" | bash
+    source "$XDG_CONFIG_HOME/sdkman/bin/sdkman-init.sh"
 fi
 
-source "$SDKMAN_DIR/bin/sdkman-init.sh"
 sdk update
-sdk selfupdate
+#sdk selfupdate
 
 log info '|||> Setting Gradle'
 sdk install gradle 8.7

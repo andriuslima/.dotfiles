@@ -11,22 +11,21 @@ function log() {
     level=$1
     message=$2
     if [[ $level = 'info' ]]; then
-        echo -e "${GREEN}$message${NOCOLOR}"
+        echo "${GREEN}$message${NOCOLOR}"
     elif [[ $level = 'warning' ]]; then
-        echo -e "${YELLOW}$message${NOCOLOR}"
+        echo "${YELLOW}$message${NOCOLOR}"
     else
-        echo -e "${RED}$message${NOCOLOR}"
+        echo "${RED}$message${NOCOLOR}"
     fi
 }
 
-log info 'Installing FZF'
-
 fzf_dir=${XDG_CONFIG_HOME}/fzf
 
-if [ ! -d "$fzf_dir" ] ; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git $fzf_dir
-    $fzf_dir/install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
-else
+if command -v fzf &>/dev/null; then
     log info 'FZF already installed. Performing Update'
     cd $fzf_dir && git pull && ./install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
+else
+    log info "Installing: FZF"
+    git clone --depth 1 https://github.com/junegunn/fzf.git $fzf_dir
+    $fzf_dir/install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish --all
 fi

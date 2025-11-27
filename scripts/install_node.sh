@@ -9,30 +9,27 @@ function log() {
     level=$1
     message=$2
     if [[ $level = 'info' ]]; then
-        echo -e "${GREEN}$message${NOCOLOR}"
+        echo "${GREEN}$message${NOCOLOR}"
     elif [[ $level = 'warning' ]]; then
-        echo -e "${YELLOW}$message${NOCOLOR}"
+        echo "${YELLOW}$message${NOCOLOR}"
     else
-        echo -e "${RED}$message${NOCOLOR}"
+        echo "${RED}$message${NOCOLOR}"
     fi
 }
 
-log info '|||> Installing NVM'
-
-export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
-
-if [ ! -f "$NVM_DIR/nvm.sh" ] ; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-else
-    log info 'NVM already installed. Performing update'
-    cd $NVM_DIR && ./install.sh
-fi
-
+NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-log info 'Installing node'
+if command -v nvm &>/dev/null; then
+    log info 'NVM already installed. Performing update'
+    cd $NVM_DIR && ./install.sh
+else
+    log info "Installing: NVM"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+fi
+
+log info 'Setting node'
 nvm cache clear
-nvm install 20.12.2
 nvm install 22.15.0
 nvm alias default 22.15.0
 
@@ -40,5 +37,4 @@ nvm use default 22.15.0
 
 log info 'Installing NPM packages'
 npm install -g @nestjs/cli
-npm install -g pnpm@latest-10
 npm i -g npm@11.6.2

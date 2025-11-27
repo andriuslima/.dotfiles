@@ -9,14 +9,30 @@ function log() {
     level=$1
     message=$2
     if [[ $level = 'info' ]]; then
-        echo -e "${GREEN}$message${NOCOLOR}"
+        echo "${GREEN}$message${NOCOLOR}"
     elif [[ $level = 'warning' ]]; then
-        echo -e "${YELLOW}$message${NOCOLOR}"
+        echo "${YELLOW}$message${NOCOLOR}"
     else
-        echo -e "${RED}$message${NOCOLOR}"
+        echo "${RED}$message${NOCOLOR}"
     fi
     sleep 1
 }
 
-log info 'Installing Apps'
-zsh $HOME/.bin/install_apps.sh
+if !command -v stow &>/dev/null; then
+    zsh scripts/.bin/install_stow.sh
+fi
+
+log info '|> Installing Apps...'
+zsh $DOTFILES_DIR/scripts/install_aws.sh
+zsh $DOTFILES_DIR/scripts/install_bun.sh
+zsh $DOTFILES_DIR/scripts/install_fzf.sh
+zsh $DOTFILES_DIR/scripts/install_node.sh
+zsh $DOTFILES_DIR/scripts/install_python.sh
+zsh $DOTFILES_DIR/scripts/install_sdkman.sh
+zsh $DOTFILES_DIR/scripts/install_starship.sh
+zsh $DOTFILES_DIR/scripts/install_zshzap.sh
+log info '|> Packages set'
+
+log info '|> Setting configs'
+zsh $DOTFILES_DIR/scripts/setup_ssh.sh
+log info '|> Configs set'
