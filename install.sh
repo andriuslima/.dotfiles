@@ -18,6 +18,8 @@ function log() {
     sleep 1
 }
 
+export DOTFILES_DIR=$HOME/.dotfiles/
+
 if !command -v stow &>/dev/null; then
     zsh scripts/.bin/install_stow.sh
 fi

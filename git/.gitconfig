@@ -4,5 +4,5 @@
 [pull]
 	rebase = true
 
-[includeIf "gitdir:/Users/andriuslima/Codes/ca/"]
+[includeIf "gitdir:/Users/andriuslima/Codes/work/"]
 	path = /Users/andriuslima/.gitconfig_work
