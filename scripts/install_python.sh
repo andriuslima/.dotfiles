@@ -27,6 +27,7 @@ else
     curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o $HOME/miniconda3/miniconda.sh
     bash $HOME/miniconda3/miniconda.sh -b -u -p $HOME/miniconda3
     rm $HOME/miniconda3/miniconda.sh
+    source $HOME/miniconda3/bin/activate
 fi
 
 log info "Setting Python"

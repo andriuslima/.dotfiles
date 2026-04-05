@@ -31,7 +31,7 @@ zsh $DOTFILES_DIR/scripts/install_node.sh
 zsh $DOTFILES_DIR/scripts/install_python.sh
 zsh $DOTFILES_DIR/scripts/install_starship.sh
 zsh $DOTFILES_DIR/scripts/install_zshzap.sh
-log info '|> Packages set'
+log info '|> Apps installed'
 
 log info '|> Setting configs'
 zsh $DOTFILES_DIR/scripts/setup_ssh.sh
