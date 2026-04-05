@@ -4,16 +4,12 @@
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/completions"
-plug "zap-zsh/fzf"
 plug "hlissner/zsh-autopair"
-plug "Aloxaf/fzf-tab"
 
 # Alias
 alias ll='ls -l'
 alias la='ls -la'
 alias codes='cd $HOME/Codes/'
-alias tsq='cd $HOME/Codes/tsq/'
-alias ca='cd $HOME/Codes/ca/'
 alias g='git'
 alias glog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
 alias gs='git status'
@@ -43,10 +39,6 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
-
-gwrapper() {
-  gradle wrapper --gradle-version "$1" --distribution-type all
-}
 
 grlu() {
    git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
@@ -88,21 +80,8 @@ export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# FZF
-[ -f "${XDG_CONFIG_HOME}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME}"/fzf/fzf.zsh
-source <(fzf --zsh)
-
 # bun completions
 [ -s "/Users/andriuslima/.bun/_bun" ] && source "/Users/andriuslima/.bun/_bun"
 
 #Starship
 eval "$(starship init zsh)"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
-
-# pnpm
-export PNPM_HOME="/Users/andriuslima/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end

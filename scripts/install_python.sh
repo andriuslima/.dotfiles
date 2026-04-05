@@ -17,15 +17,6 @@ function log() {
     fi
 }
 
-
-
-
-
-
-
-
-
-
 if command -v conda &>/dev/null; then
     log info 'miniconda3 already installed. Performing update'
     source $HOME/miniconda3/bin/activate

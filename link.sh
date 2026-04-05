@@ -2,7 +2,6 @@
 
 modules=(
 git
-sdkman
 ssh
 starship
 zsh

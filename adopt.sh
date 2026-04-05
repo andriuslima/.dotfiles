@@ -2,7 +2,6 @@
 
 dir=(
 git
-sdkman
 ssh
 starship
 zsh

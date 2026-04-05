@@ -27,10 +27,8 @@ fi
 log info '|> Installing Apps...'
 zsh $DOTFILES_DIR/scripts/install_aws.sh
 zsh $DOTFILES_DIR/scripts/install_bun.sh
-zsh $DOTFILES_DIR/scripts/install_fzf.sh
 zsh $DOTFILES_DIR/scripts/install_node.sh
 zsh $DOTFILES_DIR/scripts/install_python.sh
-zsh $DOTFILES_DIR/scripts/install_sdkman.sh
 zsh $DOTFILES_DIR/scripts/install_starship.sh
 zsh $DOTFILES_DIR/scripts/install_zshzap.sh
 log info '|> Packages set'
