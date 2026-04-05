@@ -35,5 +35,6 @@ log info '|> Apps installed'
 
 log info '|> Setting configs'
 zsh $DOTFILES_DIR/scripts/setup_ssh.sh
-zsh $DOTFILES_DIR/scripts/setup_repositories.sh
+zsh $DOTFILES_DIR/scripts/setup_personal_repositories.sh
+zsh $DOTFILES_DIR/scripts/setup_work_repositories.sh
 log info '|> Configs set'
