@@ -17,6 +17,11 @@ function log() {
     fi
 }
 
+STAGE_CHANGES=false
+if [[ "$1" == "--stage-changes" ]]; then
+    STAGE_CHANGES=true
+fi
+
 DOMAIN="bitbucket.org"
 WORKSPACE="associa_it"
 CODES_DIR="$HOME/Codes/work"
@@ -39,6 +44,7 @@ REPOS=(
     "ca_service_billing"
     "ca_service_closing"
     "ca_service_community"
+    "ca_service_document"
     "ca_service_notification"
     "ca_service_order"
     "ca_service_product"
@@ -56,13 +62,18 @@ cd $CODES_DIR
 
 for REPO in "${REPOS[@]}"; do
     if [ -d "$REPO" ]; then
-        log warn "Directory '$REPO' already exists. Updating..."
         pushd "$REPO" > /dev/null
-        
-        # Check for unstaged changes
+
+        # Check for uncommitted changes
         if [[ -n $(git status --porcelain) ]]; then
-            log warn "Unstaged changes detected in $REPO. Stashing..."
-            git stash > /dev/null 2>&1
+            if [[ "$STAGE_CHANGES" == true ]]; then
+                log warn "Uncommitted changes detected in $REPO. Stashing..."
+                git stash > /dev/null 2>&1
+            else
+                log warn "Uncommitted changes detected in $REPO. Skipping (use --stage-changes to stash and update)."
+                popd > /dev/null
+                continue
+            fi
         fi
 
         log info "Pulling latest changes in $REPO..."

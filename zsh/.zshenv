@@ -8,4 +8,4 @@ export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/
 export BUN_INSTALL=$HOME/.bun
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
-export DOTNET_ROOT=/usr/local/share/dotnet
+export DOTNET_ROOT=$HOME/.dotnet

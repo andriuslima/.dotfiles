@@ -30,6 +30,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
+export PATH=$DOTNET_ROOT:$PATH
 
 # Options
 setopt appendhistory
