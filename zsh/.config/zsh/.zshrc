@@ -28,7 +28,6 @@ export EDITOR=vim
 # Path
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
-export PATH=$BUN_INSTALL/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$DOTNET_ROOT:$PATH
 
@@ -81,8 +80,6 @@ export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# bun completions
-[ -s "/Users/andriuslima/.bun/_bun" ] && source "/Users/andriuslima/.bun/_bun"
 
 #Starship
 eval "$(starship init zsh)"
