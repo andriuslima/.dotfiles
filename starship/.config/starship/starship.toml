@@ -28,3 +28,6 @@ ignore_base = false
 
 [nodejs]
 symbol = 'node:'
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'

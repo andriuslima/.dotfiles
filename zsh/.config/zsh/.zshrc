@@ -86,3 +86,6 @@ export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 
 #Starship
 eval "$(starship init zsh)"
+
+#UV
+source "$HOME/.local/share/../bin/env"

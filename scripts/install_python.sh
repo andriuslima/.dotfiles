@@ -30,10 +30,18 @@ else
     source $HOME/miniconda3/bin/activate
 fi
 
-log info "Setting Python"
+log info "Setting Miniconda"
 
 conda config --quiet --add channels conda-forge --quiet
 conda config --quiet --add channels defaults
 conda config --quiet --set changeps1 false
 conda config --quiet --set auto_activate_base false
 conda config --quiet --set ssl_verify false
+
+if command -v uv &>/dev/null; then
+    log info 'uv already installed. Performing update'
+    uv self update
+else
+    log info 'Installing: uv'
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
