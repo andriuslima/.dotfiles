@@ -22,7 +22,6 @@ WORKSPACE="andriuslima"
 CODES_DIR="$HOME/Codes/personal"
 
 REPOS=(
-    "scripts"
     "andriuslima"
     "blog"
 )
@@ -34,12 +33,12 @@ cd $CODES_DIR
 
 for REPO in "${REPOS[@]}"; do
     if [ -d "$REPO" ]; then
-        log warn "Directory '$REPO' already exists. Updating..."
+        log warning "Directory '$REPO' already exists. Updating..."
         pushd "$REPO" > /dev/null
         
         # Check for unstaged changes
         if [[ -n $(git status --porcelain) ]]; then
-            log warn "Unstaged changes detected in $REPO. Stashing..."
+            log warning "Unstaged changes detected in $REPO. Stashing..."
             git stash > /dev/null 2>&1
         fi
 

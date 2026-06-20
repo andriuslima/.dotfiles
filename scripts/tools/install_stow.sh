@@ -17,12 +17,16 @@ function log() {
     fi
 }
 
-log info "Installing GNU Stow"
+if command -v stow &>/dev/null; then
+    log info 'GNU Stow already instaled'
+else
+    log info "Installing GNU Stow"
 
-curl -sS https://mirrors.ibiblio.org/gnu/stow/stow-2.4.1.tar.gz --output stow-2.4.1.tar.gz
-tar --extract --file stow-2.4.1.tar.gz
+    curl -sS https://mirrors.ibiblio.org/gnu/stow/stow-2.4.1.tar.gz --output stow-2.4.1.tar.gz
+    tar --extract --file stow-2.4.1.tar.gz
 
-(cd stow-2.4.1 && ./configure && sudo make install)
+    (cd stow-2.4.1 && ./configure && sudo make install)
 
-rm stow-2.4.1.tar.gz
-rm -rf stow-2.4.1
+    rm stow-2.4.1.tar.gz
+    rm -rf stow-2.4.1
+fi

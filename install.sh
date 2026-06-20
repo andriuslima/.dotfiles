@@ -19,22 +19,28 @@ function log() {
 }
 
 export DOTFILES_DIR=$HOME/.dotfiles/
+SCRIPTS_DIR="$DOTFILES_DIR/scripts"
+LANGUAGES_DIR="$SCRIPTS_DIR/languages"
+TOOLS_DIR="$SCRIPTS_DIR/tools"
 
-if !command -v stow &>/dev/null; then
-    zsh scripts/.bin/install_stow.sh
-fi
+log info 'Installing tools'
+for script in "$TOOLS_DIR"/*.sh; do
+    if [[ -f "$script" ]]; then
+        log info "Running $(basename "$script")..."
+        zsh "$script"
+    fi
+done
 
-log info '|> Installing Apps...'
-zsh $DOTFILES_DIR/scripts/install_aws.sh
-zsh $DOTFILES_DIR/scripts/install_bun.sh
-zsh $DOTFILES_DIR/scripts/install_node.sh
-zsh $DOTFILES_DIR/scripts/install_python.sh
-zsh $DOTFILES_DIR/scripts/install_starship.sh
-zsh $DOTFILES_DIR/scripts/install_zshzap.sh
-log info '|> Apps installed'
+log info 'Installing languages'
+for script in "$LANGUAGES_DIR"/*.sh; do
+    if [[ -f "$script" ]]; then
+        log info "Running $(basename "$script")..."
+        zsh "$script"
+    fi
+done
 
 log info '|> Setting configs'
-zsh $DOTFILES_DIR/scripts/setup_ssh.sh
-zsh $DOTFILES_DIR/scripts/setup_personal_repositories.sh
-zsh $DOTFILES_DIR/scripts/setup_work_repositories.sh
+zsh $SCRIPTS_DIR/setup_ssh.sh
+zsh $SCRIPTS_DIR/setup_personal_repositories.sh
+zsh $SCRIPTS_DIR/setup_work_repositories.sh
 log info '|> Configs set'

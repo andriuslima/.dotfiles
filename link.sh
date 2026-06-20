@@ -1,16 +1,10 @@
 #!/usr/bin/env zsh
 
-modules=(
+dir=(
 git
 ssh
 starship
 zsh
 )
 
-export DOTFILES_DIR=$HOME/.dotfiles/
-
-if !command -v stow &>/dev/null; then
-    zsh $DOTFILES_DIR/scripts/install_stow.sh
-fi
-
-stow ${modules[@]} --no-folding --restow
+stow ${dir[@]} --no-folding --restow

@@ -33,10 +33,8 @@ log info 'Setting node'
 nvm cache clear
 nvm install 22.15.0
 nvm alias default 22.15.0
-
 nvm use default 22.15.0
 
 log info 'Installing NPM packages'
-
 npm install -g @nestjs/cli
 npm install -g npm@11.6.2

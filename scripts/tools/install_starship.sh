@@ -19,8 +19,11 @@ function log() {
     fi
 }
 
-log info 'Installing: Starship'
-
-curl -sS https://starship.rs/install.sh --output starship-installer.sh
-sh starship-installer.sh --bin-dir /usr/local/bin --yes
-rm starship-installer.sh
+if command -v starship &>/dev/null; then
+    log info "Starship already installed"
+else
+    log info 'Installing: Starship'
+    curl -sS https://starship.rs/install.sh --output starship-installer.sh
+    sh starship-installer.sh --bin-dir /usr/local/bin --yes
+    rm starship-installer.sh
+fi
