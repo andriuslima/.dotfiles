@@ -44,6 +44,7 @@ REPOS=(
     "ca_service_billing"
     "ca_service_closing"
     "ca_service_community"
+    "ca_service_company"
     "ca_service_document"
     "ca_service_notification"
     "ca_service_order"
