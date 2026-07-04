@@ -1,3 +1,5 @@
+
+
 [ -f "$XDG_DATA_HOME/zap/zap.zsh" ] && source "$XDG_DATA_HOME/zap/zap.zsh"
 
 # Plugins
@@ -86,3 +88,5 @@ eval "$(starship init zsh)"
 
 #UV
 source "$HOME/.local/share/../bin/env"
+
+
