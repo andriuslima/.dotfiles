@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 dir=(
+kiro
 git
 ssh
 starship

@@ -1,0 +1,68 @@
+rules:
+  - capability: shell
+    match:
+      - npx jest *
+      - npm test *
+      - npm install *
+      - npm run build *
+      - git *
+      - ls *
+      - mkdir *
+      - cp *
+      - grep *
+      - dotnet *
+      - npx tsc *
+      - which *
+      - cat *
+      - find *
+      - swift build *
+      - swift test *
+      - xcodebuild test *
+      - sed *
+      - tail *
+      - ENV=devqa npm run synth
+      - head *
+      - aws configure list-profiles
+      - echo *
+      - aws configure list
+    effect: allow
+  - capability: web_fetch
+    effect: allow
+  - capability: web_search
+    effect: allow
+  - capability: shell
+    match:
+      - git push *
+      - git commit *
+      - rm -rf*
+      - rm -rf /*
+      - rm -rf *
+      - chmod *
+      - sudo *
+      - su *
+    effect: deny
+  - capability: mcp
+    match:
+      - Atlassian/getAccessibleAtlassianResources
+      - Atlassian/getJiraIssue
+      - Atlassian/searchConfluenceUsingCql
+      - Atlassian/getConfluencePage
+      - Atlassian/createConfluencePage
+      - Atlassian/editJiraIssue
+      - Atlassian/createJiraIssue
+      - Atlassian/createIssueLink
+      - power-aws-observability-awslabs.cloudwatch-mcp-server/describe_log_groups
+      - power-aws-observability-awslabs.cloudwatch-mcp-server/execute_log_insights_query
+    effect: allow
+  - capability: mcp
+    match:
+      - power-datadog-datadog/search_datadog_logs
+      - power-datadog-datadog/list_datadog_skills
+      - power-datadog-datadog/load_datadog_skill
+    effect: allow
+  - capability: fs_write
+    effect: allow
+  - capability: fs_read
+    effect: allow
+  - capability: skill
+    effect: allow

@@ -1,0 +1,105 @@
+{
+  "mcpServers": {
+    "Atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
+      "autoApprove": [
+        "getAccessibleAtlassianResources",
+        "getJiraIssue",
+        "searchConfluenceUsingCql",
+        "getConfluencePage",
+        "createConfluencePage",
+        "editJiraIssue"
+      ]
+    }
+  },
+  "powers": {
+    "mcpServers": {
+      "power-amazon-aurora-mysql-awslabs.mysql-mcp-server": {
+        "args": [
+          "awslabs.mysql-mcp-server@latest"
+        ],
+        "command": "uvx"
+      },
+      "power-iam-policy-autopilot-power-iam-policy-autopilot-mcp": {
+        "command": "uvx",
+        "args": [
+          "iam-policy-autopilot@latest",
+          "mcp-server"
+        ],
+        "env": {},
+        "disabled": false
+      },
+      "power-aws-infrastructure-as-code-awslabs.aws-iac-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.aws-iac-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "default",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      },
+      "power-aws-observability-awslabs.cloudwatch-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.cloudwatch-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "default",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      },
+      "power-aws-observability-awslabs.cloudwatch-applicationsignals-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.cloudwatch-applicationsignals-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "default",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      },
+      "power-aws-observability-awslabs.cloudtrail-mcp-server": {
+        "disabled": false,
+        "command": "uvx",
+        "args": [
+          "awslabs.cloudtrail-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "default",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "transportType": "stdio"
+      },
+      "power-aws-observability-awslabs.prometheus-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.prometheus-mcp-server@latest"
+        ],
+        "env": {
+          "AWS_PROFILE": "default",
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      },
+      "power-aws-observability-awslabs.aws-documentation-mcp-server": {
+        "command": "uvx",
+        "args": [
+          "awslabs.aws-documentation-mcp-server@latest"
+        ],
+        "env": {
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
+      },
+      "power-figma-figma": {
+        "type": "http",
+        "url": "https://mcp.figma.com/mcp"
+      }
+    }
+  }
+}

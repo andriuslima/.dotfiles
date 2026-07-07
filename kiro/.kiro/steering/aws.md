@@ -1,0 +1,6 @@
+- Avoid using L1 constructors when writing AWS CDK code. Prefer using L2 and L3 constructors
+- Use the ca-devqa profile for Community Archives DevQA environment
+- Use the ca-uat profile for Community Archives UAT environment
+- Use the ca-prod profile for Community Archives Production environment
+- Use the ca-devqa profile as default
+- Login to AWS SSO using the appropriate profile before executing aws shell commands: ex.: `aws sso login --profile ca-devqa`
