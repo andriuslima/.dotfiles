@@ -18,10 +18,15 @@ function log() {
 }
 
 if command -v aws &>/dev/null; then
-    log info "AWS already installed"
+    log warning "AWS already installed, updating..."
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target /
+    rm AWSCLIV2.pkg
+    log info "AWS updated successfully"
 else
     log info "Installing: AWS"
     curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
     sudo installer -pkg AWSCLIV2.pkg -target /
     rm AWSCLIV2.pkg
+    log info "AWS installed successfully"
 fi
