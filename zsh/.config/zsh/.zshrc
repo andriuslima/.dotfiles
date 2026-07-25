@@ -89,4 +89,5 @@ eval "$(starship init zsh)"
 #UV
 source "$HOME/.local/share/../bin/env"
 
-
+# Added by sonarqube-cli installer
+export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"
