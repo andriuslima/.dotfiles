@@ -1,5 +1,16 @@
 {
   "mcpServers": {
+    "aws-mcp": {
+      "command": "uvx",
+      "args": [
+        "mcp-proxy-for-aws@1.6.3",
+        "https://aws-mcp.us-east-1.api.aws/mcp"
+      ],
+      "env": {
+        "AWS_REGION": "us-west-2",
+        "AWS_PROFILE": "ca-devqa"
+      }
+    },
     "Atlassian": {
       "type": "http",
       "url": "https://mcp.atlassian.com/v1/mcp/authv2",
@@ -16,25 +27,18 @@
   "powers": {
     "mcpServers": {
       "power-amazon-aurora-mysql-awslabs.mysql-mcp-server": {
-        "args": [
-          "awslabs.mysql-mcp-server@latest"
-        ],
+        "args": ["awslabs.mysql-mcp-server@latest"],
         "command": "uvx"
       },
       "power-iam-policy-autopilot-power-iam-policy-autopilot-mcp": {
         "command": "uvx",
-        "args": [
-          "iam-policy-autopilot@latest",
-          "mcp-server"
-        ],
+        "args": ["iam-policy-autopilot@latest", "mcp-server"],
         "env": {},
         "disabled": false
       },
       "power-aws-infrastructure-as-code-awslabs.aws-iac-mcp-server": {
         "command": "uvx",
-        "args": [
-          "awslabs.aws-iac-mcp-server@latest"
-        ],
+        "args": ["awslabs.aws-iac-mcp-server@latest"],
         "env": {
           "AWS_PROFILE": "default",
           "FASTMCP_LOG_LEVEL": "ERROR"
@@ -43,9 +47,7 @@
       },
       "power-aws-observability-awslabs.cloudwatch-mcp-server": {
         "command": "uvx",
-        "args": [
-          "awslabs.cloudwatch-mcp-server@latest"
-        ],
+        "args": ["awslabs.cloudwatch-mcp-server@latest"],
         "env": {
           "AWS_PROFILE": "default",
           "FASTMCP_LOG_LEVEL": "ERROR"
@@ -54,11 +56,9 @@
       },
       "power-aws-observability-awslabs.cloudwatch-applicationsignals-mcp-server": {
         "command": "uvx",
-        "args": [
-          "awslabs.cloudwatch-applicationsignals-mcp-server@latest"
-        ],
+        "args": ["awslabs.cloudwatch-applicationsignals-mcp-server@latest"],
         "env": {
-          "AWS_PROFILE": "default",
+          "AWS_PROFILE": "ca-devqa",
           "FASTMCP_LOG_LEVEL": "ERROR"
         },
         "disabled": false
@@ -66,9 +66,7 @@
       "power-aws-observability-awslabs.cloudtrail-mcp-server": {
         "disabled": false,
         "command": "uvx",
-        "args": [
-          "awslabs.cloudtrail-mcp-server@latest"
-        ],
+        "args": ["awslabs.cloudtrail-mcp-server@latest"],
         "env": {
           "AWS_PROFILE": "default",
           "FASTMCP_LOG_LEVEL": "ERROR"
@@ -77,20 +75,16 @@
       },
       "power-aws-observability-awslabs.prometheus-mcp-server": {
         "command": "uvx",
-        "args": [
-          "awslabs.prometheus-mcp-server@latest"
-        ],
+        "args": ["awslabs.prometheus-mcp-server@latest"],
         "env": {
-          "AWS_PROFILE": "default",
+          "AWS_PROFILE": "ca-devqa",
           "FASTMCP_LOG_LEVEL": "ERROR"
         },
         "disabled": false
       },
       "power-aws-observability-awslabs.aws-documentation-mcp-server": {
         "command": "uvx",
-        "args": [
-          "awslabs.aws-documentation-mcp-server@latest"
-        ],
+        "args": ["awslabs.aws-documentation-mcp-server@latest"],
         "env": {
           "FASTMCP_LOG_LEVEL": "ERROR"
         },
@@ -99,6 +93,19 @@
       "power-figma-figma": {
         "type": "http",
         "url": "https://mcp.figma.com/mcp"
+      },
+      "power-opensearch-launchpad-opensearch-launchpad": {
+        "command": "bash",
+        "args": [
+          "--noprofile",
+          "--norc",
+          "-c",
+          "set -euo pipefail; PATH=\"$HOME/.local/bin:$HOME/.local:$HOME/.cargo/bin:/opt/homebrew/bin:/usr/local/bin:$PATH\"; UV_BIN=\"$(command -v uv || true)\"; UVX_BIN=\"$(command -v uvx || true)\"; if [ -z \"$UV_BIN\" ] && [ -z \"$UVX_BIN\" ]; then UV_INSTALL_DIR=\"$HOME/.local/bin\"; mkdir -p \"$UV_INSTALL_DIR\"; curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=\"$UV_INSTALL_DIR\" UV_NO_MODIFY_PATH=1 sh; PATH=\"$UV_INSTALL_DIR:$HOME/.local:$PATH\"; UV_BIN=\"$(command -v uv || true)\"; UVX_BIN=\"$(command -v uvx || true)\"; fi; if [ -n \"$UV_BIN\" ] && [ -x \"$UV_BIN\" ]; then exec \"$UV_BIN\" tool run opensearch-launchpad@latest; fi; if [ -n \"$UVX_BIN\" ] && [ -x \"$UVX_BIN\" ]; then exec \"$UVX_BIN\" opensearch-launchpad@latest; fi; echo \"Unable to find uv or uvx after installation attempt.\" >&2; exit 1"
+        ],
+        "env": {
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        },
+        "disabled": false
       }
     }
   }
