@@ -13,8 +13,9 @@ alias ll='ls -l'
 alias la='ls -la'
 alias codes='cd $HOME/Codes/'
 alias g='git'
-alias glog='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'\'' --stat'
+alias glog='git log --graph -n 15 --decorate-refs-exclude=refs/tags --pretty=format:'\''%Cred%h%Creset%C(auto)%d%Creset %s %Cgreen(%ad | %ar) %C(bold blue)<%an>%Creset'\'' --date=format:'\''%Y-%m-%d %H:%M'\'''
 alias gs='git status'
+alias ga='git add .'
 alias gc='git commit -m'
 alias gca='git commit --amend --no-edit'
 
@@ -25,13 +26,6 @@ export SAVEHIST=$HISTSIZE # Maximum events in history file
 export HISTDUP=erase
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export WORDCHARS=${WORDCHARS//[\/]}
-export EDITOR=vim
-
-# Path
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.dotnet/tools:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
-export PATH=$DOTNET_ROOT:$PATH
 
 # Options
 setopt appendhistory
@@ -81,7 +75,6 @@ export SDKMAN_DIR="$XDG_CONFIG_HOME/sdkman"
 
 # NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 
 #Starship
 eval "$(starship init zsh)"

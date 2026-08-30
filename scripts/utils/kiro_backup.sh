@@ -3,7 +3,7 @@
 set -e
 
 KIRO_HOME="$HOME/.kiro"
-DOTFILES_KIRO="$HOME/.dotfiles/kiro"
+DOTFILES_KIRO="$DOTFILES_DIR/kiro"
 
 echo "Backing up Kiro configuration..."
 
