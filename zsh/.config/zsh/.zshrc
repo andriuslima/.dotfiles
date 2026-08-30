@@ -36,9 +36,8 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-grlu() {
-   git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
-}
+# Shared functions (also sourced by standalone scripts)
+[ -f "$ZDOTDIR/functions.zsh" ] && source "$ZDOTDIR/functions.zsh"
 
 shell_loading_performance() {
     for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
