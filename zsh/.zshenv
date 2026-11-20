@@ -14,6 +14,7 @@ export EDITOR=vim
 # Path (typeset -U keeps entries unique across shell invocations)
 typeset -U path
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.dotnet/tools:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$DOTNET_ROOT:$PATH

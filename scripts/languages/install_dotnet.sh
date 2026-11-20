@@ -19,10 +19,26 @@ function log() {
     fi
 }
 
-if command -v dotnet &>/dev/null && dotnet --list-sdks | grep -q "^8\."; then
-    log info '.NET 8 already installed. Performing update'
-    curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 8.0
-else
-    log info 'Installing: .NET 8'
-    curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 8.0
-fi
+# On Apple Silicon, dotnet-install.sh overwrites ~/.dotnet/dotnet in place.
+# macOS keeps the previous binary's code-signature (CDHash) cached for that
+# path, so after an update the kernel's AMFI kills the new (validly signed)
+# host with "Taskgated Invalid Signature" / SIGKILL. Swapping the file to a
+# fresh inode invalidates the stale cache entry.
+function bust_signature_cache() {
+    dotnet_bin="${DOTNET_ROOT:-$HOME/.dotnet}/dotnet"
+    if [[ "$(uname)" = 'Darwin' && -f "$dotnet_bin" ]]; then
+        log info "Refreshing dotnet host inode to clear stale signature cache: $dotnet_bin"
+        cp -p "$dotnet_bin" "${dotnet_bin}.new" && mv -f "${dotnet_bin}.new" "$dotnet_bin"
+    fi
+}
+
+function install_dotnet() {
+    version=$1
+    channel=$2
+    log info "Installing/updating: .NET ${version}"
+    curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel "$channel"
+    bust_signature_cache
+}
+
+install_dotnet 8 8.0
+install_dotnet 10 10.0
