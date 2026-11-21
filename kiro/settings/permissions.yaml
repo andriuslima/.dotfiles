@@ -1,0 +1,115 @@
+rules:
+  - capability: shell
+    match:
+      - npx jest *
+      - npm test *
+      - npm install *
+      - npm run build *
+      - git *
+      - ls *
+      - mkdir *
+      - cp *
+      - grep *
+      - dotnet *
+      - npx tsc *
+      - which *
+      - cat *
+      - find *
+      - swift build *
+      - swift test *
+      - xcodebuild test *
+      - sed *
+      - tail *
+      - ENV=devqa npm run synth
+      - head *
+      - aws configure list-profiles
+      - echo *
+      - aws configure list
+      - cd *
+      - wc *
+      - strings *
+      - sort *
+      - diff *
+      - swift --version
+      - swift sdk *
+      - aws sts *
+      - aws logs *
+      - aws sso *
+      - aws codeartifact *
+      - aws cloudwatch *
+      - ./node_modules/.bin/tsc *
+      - npx *
+      - curl *
+      - eval *
+      - ENV=devqa npx cdk diff CA-ElasticSearch --profile ca-devqa
+      - npm run format:check
+      - npm run lint:check
+      - sonar auth status
+      - read *
+      - jq *
+      - uniq *
+      - aws configure export-credentials --profile ca-prod --format env
+      - aws configure get region --profile ca-prod
+      - tr *
+      - aws ssm *
+      - cut *
+    effect: allow
+  - capability: shell
+    match:
+      - git push *
+      - git commit *
+      - rm -rf*
+      - rm -rf /*
+      - rm -rf *
+      - chmod *
+      - sudo *
+      - su *
+    effect: deny
+  - capability: web_fetch
+    effect: allow
+  - capability: web_search
+    effect: allow
+  - capability: mcp
+    match:
+      - Atlassian/getAccessibleAtlassianResources
+      - Atlassian/getJiraIssue
+      - Atlassian/searchConfluenceUsingCql
+      - Atlassian/getConfluencePage
+      - Atlassian/createConfluencePage
+      - Atlassian/editJiraIssue
+      - Atlassian/createJiraIssue
+      - Atlassian/createIssueLink
+      - power-aws-observability-awslabs.cloudwatch-mcp-server/describe_log_groups
+      - power-aws-observability-awslabs.cloudwatch-mcp-server/execute_log_insights_query
+      - Atlassian/searchJiraIssuesUsingJql
+      - aws-mcp/aws___run_script
+      - aws-mcp/aws___call_aws
+      - bear/read_note_content
+      - kirocrew-core/browser
+      - kirocrew-work/work_brief
+    effect: allow
+  - capability: mcp
+    match:
+      - power-datadog-datadog/search_datadog_logs
+      - power-datadog-datadog/list_datadog_skills
+      - power-datadog-datadog/load_datadog_skill
+    effect: allow
+  - capability: fs_write
+    effect: allow
+  - capability: fs_read
+    effect: allow
+  - capability: skill
+    effect: allow
+  - capability: power
+    effect: allow
+    match:
+      - aws-observability
+      - aws-observability/awslabs.cloudwatch-mcp-server/describe_log_groups
+      - aws-observability/awslabs.cloudwatch-mcp-server/execute_log_insights_query
+      - sonarqube
+  - capability: subagent
+    effect: allow
+    match:
+      - assistant
+policies:
+  - approve-for-me
